@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">JobLink</string>
+    <string name="login">Faça Login</string>
+    <string name="email">Digite seu email</string>
+    <string name="senha">Digite sua senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="biometria">Biometria</string>
+    <string name="esqueceu">Esqueceu sua senha?</string>
+    <string name="criarconta">CRIE SUA CONTA</string>
+    <string name="wecolme">Bem-Vindo</string>
+</resources>
