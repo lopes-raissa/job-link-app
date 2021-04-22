@@ -5,7 +5,7 @@
     <string name="senha">Digite sua senha</string>
     <string name="entrar">Entrar</string>
     <string name="biometria">Biometria</string>
-    <string name="esqueceu">Esqueceu sua senha?</string>
-    <string name="criarconta">CRIE SUA CONTA</string>
+    <string name="esqueceu">Esqueceu sua senha ?</string>
+    <string name="criarconta">Create Your Account</string>
     <string name="wecolme">Bem-Vindo</string>
 </resources>
