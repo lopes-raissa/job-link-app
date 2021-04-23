@@ -8,4 +8,13 @@
     <string name="esqueceu">Esqueceu sua senha ?</string>
     <string name="criarconta">Create Your Account</string>
     <string name="wecolme">Bem-Vindo</string>
+    <string name="register">Cadastro</string>string>
+    <string name="name">Nome Completo</string>string>
+    <string name="sexo">Sexo</string>string>
+    <string name="data_nasc">Data Nasc.</string>string>
+    <string name="cpf">CPF</string>string>
+    <string name="email_register">E-mail</string>string>
+    <string name="senha_register">Senha</string>string>
+    <string name="termos">Concordo com os termos.</string>string>
+    <string name="crate">Create Account</string>string>
 </resources>
