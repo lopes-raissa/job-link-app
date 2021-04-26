@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         button_biometria.setOnClickListener {
 
             val biometricPrompt = BiometricPrompt.Builder(this)
-                .setTitle("Titolu fo promtodfe")
+                .setTitle("Logar com Biometria")
                 .setSubtitle("Autenticação é requerida")
                 .setDescription("Este aplicativo usa proteção de impressão digital para manter seus dados seguros")
                 .setNegativeButton("Cancelar", this.mainExecutor, DialogInterface.OnClickListener { dialog, which ->
