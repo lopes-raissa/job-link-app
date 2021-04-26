@@ -17,4 +17,10 @@
     <string name="senha_register">Senha</string>string>
     <string name="termos">Concordo com os termos.</string>string>
     <string name="crate">Create Account</string>string>
+
+    <string-array name="services">
+        <item>Eletricista</item>
+        <item>Enacanador</item>
+        <item>Técnico de informática</item>
+    </string-array>
 </resources>
