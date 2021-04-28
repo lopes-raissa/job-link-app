@@ -17,10 +17,29 @@
     <string name="senha_register">Senha</string>string>
     <string name="termos">Concordo com os termos.</string>string>
     <string name="crate">Create Account</string>string>
+    <string name="forms1">Selecione o tipo de serviço</string>string>
+    <string name="forms2">Selecione a urgência do serviço</string>string>
+    <string name="forms3">Selecione o atendimento</string>string>
 
-    <string-array name="services">
-        <item>Eletricista</item>
-        <item>Enacanador</item>
-        <item>Técnico de informática</item>
+    <string-array name="categorias">
+        <item>Categorias</item>
+        <item>Consertos elétricos</item>
+        <item>Consertos mecânicos</item>
+        <item>Encanamento</item>
+        <item>Pintura de residências</item>
+        <item>Problemas de inernet e rede de computadores</item>
+        <item>Costura e remendo de roupas</item>
+        <item>Websites e interface gráfica</item>
+        <item>Contabilidade</item>
+        <item>Conserto de celulares</item>
+        <item>Serviços de engenharia civil</item>
+        <item>Mudanças e carretos</item>
+        <item>Consertos de eletrodomésticos</item>
+        <item>Advocacia</item>
+    </string-array>
+
+    <string-array name="tipo_servico">
+        <item>Online</item>
+        <item>Presencial</item>
     </string-array>
 </resources>
