@@ -10,6 +10,8 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CancellationSignal
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
@@ -35,10 +37,19 @@ class MainActivity : AppCompatActivity() {
     //}
     //}
 
+
     // @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_forms)
+        setContentView(R.layout.activity_main)
+
+        //parte que abre o layout de criar conta
+        val buttonAbrirCadastro = findViewById<TextView>(R.id.abrir_criar_conta)
+
+        buttonAbrirCadastro.setOnClickListener {
+            val abrirCadastro = Intent(this, CadastroJobLinkActivity::class.java)
+            startActivity(abrirCadastro)
+        }
 
         //  checkBiometricSupport()
 

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Forms"></activity>
+        <activity android:name=".CadastroJobLinkActivity"></activity>
+        <activity android:name=".Forms" />
         <activity android:name=".SecretActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
