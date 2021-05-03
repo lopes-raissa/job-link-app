@@ -42,4 +42,12 @@
         <item>Online</item>
         <item>Presencial</item>
     </string-array>
+
+    <string-array name="urgencia">
+        <item>Indiferente</item>
+        <item>Baixa</item>
+        <item>Média</item>
+        <item>Alta</item>
+        <item>Urgente</item>
+    </string-array>
 </resources>

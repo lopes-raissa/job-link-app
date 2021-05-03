@@ -24,32 +24,16 @@
         android:layout_marginTop="10dp"/>
 
     <EditText
-        android:layout_width="150dp"
+        android:layout_width="250dp"
         android:layout_height="30dp"
        android:layout_marginTop="85dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="70dp"
         android:background="@drawable/botao_formulario"
         android:hint="Localização"
         android:paddingLeft="10dp"
         android:drawableRight="@drawable/ic_baseline_location_on_24"
         android:paddingRight="15dp"/>
 
-    <EditText
-        android:layout_width="160dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="85dp"
-        android:layout_marginLeft="200dp"
-        android:background="@drawable/botao_formulario"
-        android:paddingRight="15dp"
-        android:drawableRight="@drawable/ic_baseline_notes_24"/>
-
-    <Spinner
-        android:layout_width="170dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="85dp"
-        android:layout_marginLeft="199dp"
-        android:entries="@array/categorias"
-        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,7 +49,16 @@
             android:text="@string/forms1"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black"
+            />
+
+        <Spinner
+            android:layout_width="145dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="40dp"
+            android:entries="@array/categorias"
+            android:drawableRight="@drawable/ic_baseline_notes_24"/>
 
 
     </LinearLayout>
@@ -85,6 +78,12 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:textColor="@android:color/black"/>
+
+        <Spinner
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="40dp"
+            android:entries="@array/urgencia" />
 
 
     </LinearLayout>
@@ -106,13 +105,22 @@
             android:textColor="@android:color/black"/>
 
         <Spinner
-            android:layout_width="130dp"
+            android:layout_width="150dp"
             android:layout_height="30dp"
-            android:entries="@array/tipo_servico"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="40dp"
+            android:entries="@array/tipo_servico" />
 
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="190dp"
+        android:background="@drawable/button_salvar"
+        android:text="SALVAR"
+        android:textStyle="bold"/>
 
 
 
