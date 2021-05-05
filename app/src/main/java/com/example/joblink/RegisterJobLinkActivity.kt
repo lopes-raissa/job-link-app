@@ -4,15 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import com.example.joblink.http.HttpHelper
 import com.example.joblink.model.JobLink
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_cadastro_job_link.view.*
-import kotlinx.android.synthetic.main.activity_main.view.*
+import org.jetbrains.anko.doAsync
 
-class CadastroJobLinkActivity : AppCompatActivity() {
+class RegisterJobLinkActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro_job_link)
+        setContentView(R.layout.activity_register_job_link)
 
         val buttonSalvar = findViewById<Button>(R.id.button_criar_conta)
         val editTextNome = findViewById<EditText>(R.id.edit_text_name)
@@ -23,20 +23,23 @@ class CadastroJobLinkActivity : AppCompatActivity() {
         val editTextSenha = findViewById<EditText>(R.id.edit_text_senha_register)
 
         buttonSalvar.setOnClickListener {
-            // criando um onjeto Joblink
+            // criando um objeto Joblink
             val cliente = JobLink()
-            cliente.name = editTextNome.toString()
-            cliente.sexo = editTextSexo.toString()
-            cliente.dataNasc = editTextNascimento.toString()
-            cliente.email = editTextEmail.toString()
-            cliente.cpf = editTextCpf.toString()
-            cliente.senha = editTextSenha.toString()
+            cliente.name = editTextNome.text.toString()
+            cliente.sexo = editTextSexo.text.toString()
+            cliente.birthDate = editTextNascimento.text.toString()
+            cliente.email = editTextEmail.text.toString()
+            cliente.cpf = editTextCpf.text.toString()
+            cliente.password = editTextSenha.text.toString()
 
-            // convertendo em json
+            //converte em json
             val gson = Gson()
             val clienteJson = gson.toJson(cliente)
 
-            println("################################" + clienteJson)
+            doAsync {
+                val http = HttpHelper()
+                http.post(clienteJson)
+            }
 
         }
     }

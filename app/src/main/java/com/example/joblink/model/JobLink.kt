@@ -4,13 +4,12 @@ class JobLink {
 
     var name = ""
     var sexo = ""
-    var dataNasc = ""
+    var birthDate = ""
     var email = ""
     var cpf = ""
-    var senha = ""
+    var password = ""
 
     override fun toString(): String {
-        return "JobLink(name='$name', sexo='$sexo', dataNasc='$dataNasc', email='$email', cpf='$cpf', senha='$senha')"
+        return "JobLink(name='$name', sexo='$sexo', birthDate='$birthDate', email='$email', cpf='$cpf', password='$password')"
     }
-
 }
