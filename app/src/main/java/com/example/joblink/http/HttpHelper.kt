@@ -10,7 +10,7 @@ class HttpHelper {
     fun post (json: String): String {
 
         // Definindo URL do Servidor
-        val URL = "http://10.107.134.6:3333/clients"
+        val URL = "http://10.107.134.18:3333/clients"
 
         // Definindo o header
         val headerHttp = MediaType.parse("application/json; charset=utf-8")

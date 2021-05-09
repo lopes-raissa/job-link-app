@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
                     super.onAuthenticationSucceeded(result)
-                    notifyUser("Authentication success!")
+                    notifyUser("Sucesso na Autenticação!")
                     startActivity(Intent(this@MainActivity, SecretActivity::class.java))
                 }
             }
@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity() {
 
             val biometricPrompt = BiometricPrompt.Builder(this)
                 .setTitle("Logar com Biometria")
-                .setSubtitle("Autenticação é requerida")
                 .setDescription("Este aplicativo usa proteção de impressão digital para manter seus dados seguros")
                 .setNegativeButton(
                     "Cancelar",
@@ -98,7 +97,7 @@ class MainActivity : AppCompatActivity() {
                 .checkSelfPermission(this, android.Manifest.permission.USE_BIOMETRIC)
             != PackageManager.PERMISSION_GRANTED
         ) {
-            notifyUser("Fingerprint authetication permission is not enabled")
+            notifyUser("A permissão de autenticação de impressão digital não está ativada")
             return false
         }
         return if (packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)) {
