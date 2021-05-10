@@ -1,9 +1,11 @@
 package com.example.joblink
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import com.example.joblink.http.HttpHelper
 import com.example.joblink.model.JobLink
 import com.google.gson.Gson
@@ -13,6 +15,14 @@ class RegisterJobLinkActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_job_link)
+
+        //parte que abre o layout de criar conta
+        val buttonVoltar = findViewById<TextView>(R.id.button_back_register)
+
+        buttonVoltar.setOnClickListener {
+            val abrirCadastro = Intent(this, MainActivity::class.java)
+            startActivity(abrirCadastro)
+        }
 
         val buttonSalvar = findViewById<Button>(R.id.button_criar_conta)
         val editTextNome = findViewById<EditText>(R.id.edit_text_name)
