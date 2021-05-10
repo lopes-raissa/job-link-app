@@ -6,9 +6,9 @@
     <string name="entrar">Entrar</string>
     <string name="biometria">Biometria</string>
     <string name="esqueceu">Esqueceu sua senha ?</string>
-    <string name="criarconta">Create Your Account</string>
-    <string name="wecolme">Bem-Vindo</string>
+    <string name="criarconta">Criar Conta</string>
     <string name="register">Cadastro</string>string>
+
     <string name="name">Nome Completo</string>string>
     <string name="sexo">Sexo</string>string>
     <string name="data_nasc">Data Nasc.</string>string>

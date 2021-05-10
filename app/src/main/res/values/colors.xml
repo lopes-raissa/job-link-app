@@ -5,4 +5,5 @@
     <color name="colorAccent">#03DAC5</color>
 
     <color name="colorBiometria">#EDF1FE</color>
+    <color name="color_titles">#323C49</color>
 </resources>

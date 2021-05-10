@@ -4,137 +4,154 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_redondo"
+    android:background="@drawable/background_oficial"
     android:orientation="vertical">
-
 
     <TextView
         android:id="@+id/cadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:drawableLeft="@drawable/ic_baseline_arrow_back_ios_24"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
         android:text="@string/register"
-        android:textColor="#323C49"
+        android:textColor="@color/color_titles"
         android:textSize="28dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_name"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/edit_text_name"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/botao_register"
-        android:hint="@string/name"
-        android:padding="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cadastro" />
 
-    <EditText
-        android:id="@+id/edit_text_sexo"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/botao_register"
-        android:hint="@string/sexo"
-        android:padding="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_cpf" />
-
-    <EditText
-        android:id="@+id/edit_text_nascimento"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/botao_register"
-        android:hint="@string/data_nasc"
-        android:padding="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_sexo" />
-
-    <EditText
-        android:id="@+id/edit_text_email_register"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/botao_register"
-        android:hint="@string/email_register"
-        android:padding="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_nascimento" />
-
-    <EditText
-        android:id="@+id/edit_text_cpf"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/botao_register"
-        android:hint="@string/cpf"
-        android:padding="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_name" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:paddingStart="8dp"
-        android:text="Concordo com os Termos"
-        app:layout_constraintBottom_toTopOf="@+id/button_criar_conta"
-        app:layout_constraintStart_toStartOf="@+id/button_criar_conta" />
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cadastro">
+
+        <ImageView
+            android:id="@+id/image_view_cadastro"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/cadastro"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/perfil" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <View
+        android:id="@+id/container_register"
+        style="@style/ContainerComponents"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/container_components"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView_register"
+        android:layout_width="0dp"
+        android:layout_height="260dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/container_register"
+        app:layout_constraintEnd_toEndOf="@+id/container_register"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/container_register"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edit_text_name"
+                style="@style/edit_text_scrollView"
+                android:hint="@string/name" />
+
+            <EditText
+                android:id="@+id/edit_text_sexo"
+                style="@style/edit_text_scrollView"
+                android:background="@drawable/botao_register"
+                android:hint="@string/sexo"/>
+
+
+            <EditText
+                android:id="@+id/edit_text_nascimento"
+                style="@style/edit_text_scrollView"
+                android:hint="@string/data_nasc"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/edit_text_cpf"
+                style="@style/edit_text_scrollView"
+                android:hint="@string/cpf"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/edit_text_email_register"
+                style="@style/edit_text_scrollView"
+                android:hint="@string/email_register" />
+
+
+            <EditText
+                android:id="@+id/edit_text_senha_register"
+                style="@style/edit_text_scrollView"
+                android:layout_marginBottom="20dp"
+                android:hint="@string/senha_register"
+                android:inputType="textPassword" />
+
+        </LinearLayout>
+    </ScrollView>
+
+<!--    <CheckBox-->
+<!--        android:id="@+id/checkBox"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:paddingStart="8dp"-->
+<!--        android:text="Concordo com os Termos"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/button_criar_conta"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/container_register" />-->
+
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:background="@drawable/back_button"
+        android:drawableTop="@drawable/back_icon"
+        android:drawableTintMode="src_atop"
+        android:paddingTop="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_criar_conta"
+        app:layout_constraintStart_toStartOf="@+id/scrollView_register" />
 
     <Button
         android:id="@+id/button_criar_conta"
-        android:layout_width="280dp"
+        android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/create_account"
-        android:text="Create Account"
-        android:textColor="@android:color/holo_orange_dark"
+        android:layout_below="@+id/checkBox"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_rounded_login"
+        android:text="@string/criarconta"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/edit_text_senha_register"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/botao_register"
-        android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_email_register" />
-
+        app:layout_constraintTop_toBottomOf="@+id/container_register" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
