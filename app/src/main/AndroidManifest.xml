@@ -25,7 +25,7 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".RegisterJobLinkActivity" />
         <activity android:name=".Forms" />
-        <activity android:name=".SecretActivity" />
+        <activity android:name=".HomeActivity" />
     </application>
 
 </manifest>
