@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         val buttonAbrirCadastro = findViewById<TextView>(R.id.abrir_criar_conta)
 
         buttonAbrirCadastro.setOnClickListener {
-            val abrirCadastro = Intent(this, RegisterJobLinkActivity::class.java)
+            val abrirCadastro = Intent(this, HomeActivity::class.java)
             startActivity(abrirCadastro)
         }
 

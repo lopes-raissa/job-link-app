@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#ff6105</color>
+    <color name="colorPrimaryDark">#c42d00</color>
+    <color name="colorAccent">#ff9340</color>
 
     <color name="backgroundOffice">#DEE0E7</color>
     <color name="colorBiometria">#EDF1FE</color>

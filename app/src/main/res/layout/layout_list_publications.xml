@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="430dp"
+    android:layout_height="wrap_content"
     android:layout_marginTop="12dp"
+    android:layout_marginBottom="12dp"
     app:cardBackgroundColor="@android:color/white"
-    app:cardCornerRadius="15dp"
     app:cardElevation="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,13 +19,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
-            android:text="Matheus Henrique"
+            android:layout_marginTop="2dp"
+            android:text="Matheus Henrique Santos Da Silva"
             android:textColor="@color/design_default_color_on_secondary"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/cardView_perfil"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/cardView_perfil" />
 
         <TextView
             android:id="@+id/textDatePublication"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="1dp"
-            android:text="Developer"
+            android:text="Mecanico de manutencao"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/textDatePublication"
             app:layout_constraintTop_toBottomOf="@+id/textNameUser" />
@@ -52,51 +52,61 @@
             android:id="@+id/textDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:text="Ddegjiefrge rg gferjgewrgajieigr erg werg kewrtgi wertg ertg iweg ievhgyrtgiwergierg qerg iqeriugte ie rgeigirgti"
+            android:textAllCaps="false"
             android:textColor="@color/colorTitles"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textProfission" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView_perfil" />
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="0dp"
-            android:layout_height="250dp"
-            android:layout_marginStart="12dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="11dp"
-            android:layout_marginEnd="12dp"
             android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textDescription"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/mecanico" />
 
         <RatingBar
             android:id="@+id/textFreelancerNote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:numStars="5"
             android:rating="3.5"
             android:scaleX="0.7"
             android:scaleY="0.7"
             android:stepSize="0.5"
             android:transformPivotX="0dp"
-            android:transformPivotY="0dp"
+            android:transformPivotY="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/imageView" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_rounded_login"
             android:text="Contatar"
+            android:textColor="@android:color/white"
+            android:textSize="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageView" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView_perfil"
@@ -116,18 +126,15 @@
                 app:srcCompat="@drawable/perfil" />
         </androidx.cardview.widget.CardView>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+        <Button
+            android:id="@+id/buttonOptions"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:backgroundTint="@android:color/transparent"
-            android:clickable="true"
-            android:rotationX="186"
+            android:background="@drawable/button_options"
+            android:drawableRight="@drawable/icon_config"
+            android:paddingEnd="5dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_config" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

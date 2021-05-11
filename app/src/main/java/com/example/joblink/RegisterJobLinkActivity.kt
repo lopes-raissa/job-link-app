@@ -20,8 +20,7 @@ class RegisterJobLinkActivity : AppCompatActivity() {
         val buttonVoltar = findViewById<TextView>(R.id.button_back_register)
 
         buttonVoltar.setOnClickListener {
-            val abrirCadastro = Intent(this, MainActivity::class.java)
-            startActivity(abrirCadastro)
+            onBackPressed()
         }
 
         val buttonSalvar = findViewById<Button>(R.id.button_criar_conta)
