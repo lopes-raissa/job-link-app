@@ -13,8 +13,8 @@
         app:showAsAction="always"/>
 
     <item android:id="@+id/menu_publish"
-        android:title="Publicar"
-        android:icon="@drawable/publish_icon"
+        android:title="Mensagens"
+        android:icon="@drawable/message_icon"
         app:showAsAction="always"/>
 
     <item android:id="@+id/menu_profile"

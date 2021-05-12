@@ -33,7 +33,7 @@ class PublicationAdapter(var listPublication: ArrayList<Publication>): RecyclerV
             itemView.textDatePublication.text = publication.datePublication
             itemView.textProfission.text = publication.profission
             itemView.textDescription.text = publication.description
-            itemView.textFreelancerNote.rating = publication.freelancerNote
+           // itemView.textFreelancerNote.rating = publication.freelancerNote
         }
     }
 }
