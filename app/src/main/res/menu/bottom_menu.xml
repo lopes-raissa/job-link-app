@@ -7,7 +7,7 @@
         android:icon="@drawable/home_icon"
         app:showAsAction="always"/>
 
-    <item android:id="@+id/menu_searh"
+    <item android:id="@+id/menu_search"
         android:title="Buscar"
         android:icon="@drawable/search_icon"
         app:showAsAction="always"/>

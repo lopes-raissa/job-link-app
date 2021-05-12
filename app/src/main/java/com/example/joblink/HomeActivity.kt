@@ -2,16 +2,16 @@ package com.example.joblink
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
+import android.view.MenuItem
 import androidx.fragment.app.Fragment
+import com.example.joblink.fragments.HomeFragment
+import com.example.joblink.fragments.ProfileFragment
+import com.example.joblink.fragments.PublishFragment
+import com.example.joblink.fragments.SearchFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class HomeActivity : AppCompatActivity(), View.OnClickListener {
-
-    private lateinit var buttonHome: Button
-    private lateinit var buttonSearch: Button
-    private lateinit var buttonPublish: Button
-    private lateinit var buttonProfile: Button
+class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+    private lateinit var bottomNavigationView: BottomNavigationView
 
     private lateinit var homeFragment: HomeFragment
     private lateinit var searchFragment: SearchFragment
@@ -22,22 +22,15 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        buttonHome = findViewById(R.id.button_home)
-        buttonSearch = findViewById(R.id.button_search)
-        buttonPublish = findViewById(R.id.button_publish)
-        buttonProfile = findViewById(R.id.button_profile)
-
         homeFragment = HomeFragment()
         searchFragment = SearchFragment()
         publishFragment = PublishFragment()
         profileFragment = ProfileFragment()
 
-        buttonHome.setOnClickListener(this)
-        buttonSearch.setOnClickListener(this)
-        buttonPublish.setOnClickListener(this)
-        buttonProfile.setOnClickListener(this)
+        bottomNavigationView = findViewById(R.id.bottom_navigation)
+        bottomNavigationView.setOnNavigationItemSelectedListener(this)
 
-        //setFragment(homeFragment)
+        setFragment(homeFragment)
     }
 
     private fun setFragment(fragment: Fragment) {
@@ -46,20 +39,22 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         fragmentTransition.commit()
     }
 
-    override fun onClick(v: View) {
-        when (v.id) {
-            R.id.button_home -> {
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_home -> {
                 setFragment(homeFragment)
             }
-            R.id.button_search -> {
+            R.id.menu_search -> {
                 setFragment(searchFragment)
             }
-            R.id.button_publish -> {
+            R.id.menu_publish -> {
                 setFragment(publishFragment)
             }
-            R.id.button_profile -> {
+            R.id.menu_profile -> {
                 setFragment(profileFragment)
             }
         }
+        return true
     }
 }

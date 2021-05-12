@@ -3,8 +3,10 @@ package com.example.joblink.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.joblink.R
+import com.example.joblink.fragments.HomeFragment
 import com.example.joblink.model.Publication
 import kotlinx.android.synthetic.main.layout_list_publications.view.*
 

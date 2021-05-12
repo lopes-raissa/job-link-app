@@ -2,61 +2,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/page_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity"
     android:background="@color/backgroundOffice">
 
-    <LinearLayout
-        android:id="@+id/llContainerMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/button_home"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Home"
-            android:layout_weight="1"/>
-
-        <Button
-            android:id="@+id/button_search"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Search"
-            android:layout_weight="1"/>
-
-        <Button
-            android:id="@+id/button_publish"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Publicar"
-            android:layout_weight="1"/>
-
-        <Button
-            android:id="@+id/button_profile"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
     <FrameLayout
         android:id="@+id/frame_fragments"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/llContainerMenu"
         android:layout_above="@+id/bottom_navigation"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_menu"/>
+        app:menu="@menu/bottom_menu"
+        app:itemIconTint="@color/colorTitles"/>
 
 
 
