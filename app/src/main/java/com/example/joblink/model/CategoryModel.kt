@@ -1,6 +1,6 @@
 package com.example.joblink.model
 
-data class Category(
+data class CategoryModel(
     var id: Int,
     var titleCategory: String
 )

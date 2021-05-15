@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_splash"
-    tools:context=".SplashScreenActivity">
+    tools:context=".ui.SplashScreenActivity">
     
     <TextView
         android:id="@+id/text_view_splash_title"

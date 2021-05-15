@@ -1,6 +1,6 @@
 package com.example.joblink.model
 
-class JobLink {
+class JobLinkModel {
 
     var name = ""
     var sexo = ""

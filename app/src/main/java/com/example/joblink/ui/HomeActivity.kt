@@ -1,9 +1,10 @@
-package com.example.joblink
+package com.example.joblink.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
+import com.example.joblink.R
 import com.example.joblink.fragments.HomeFragment
 import com.example.joblink.fragments.ProfileFragment
 import com.example.joblink.fragments.PublishFragment
@@ -38,7 +39,6 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         fragmentTransition.replace(R.id.frame_fragments, fragment)
         fragmentTransition.commit()
     }
-
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

@@ -1,4 +1,4 @@
-package com.example.joblink
+package com.example.joblink.ui
 
 import android.app.KeyguardManager
 import android.content.Context
@@ -14,6 +14,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
+import com.example.joblink.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

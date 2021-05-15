@@ -1,10 +1,10 @@
-package com.example.joblink
+package com.example.joblink.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import kotlinx.android.synthetic.main.activity_splash_screen.*
+import com.example.joblink.R
 
 class SplashScreenActivity : AppCompatActivity() {
 

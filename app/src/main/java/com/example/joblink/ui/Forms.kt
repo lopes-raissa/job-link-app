@@ -1,7 +1,8 @@
-package com.example.joblink
+package com.example.joblink.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.joblink.R
 
 class Forms : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
