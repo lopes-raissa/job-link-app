@@ -2,7 +2,7 @@ package com.example.joblink.api
 
 import android.content.Context
 import retrofit2.Retrofit
-import com.example.joblink.api.UrlApi.Companion.BASE_URl
+import com.example.joblink.api.UrlApi.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
@@ -13,23 +13,33 @@ class RetrofitApi {
         fun getRetrofit() : Retrofit {
 
             var retrofit = Retrofit.Builder()
-                .baseUrl(BASE_URl)
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(OkHttpClient())
                 .build()
 
             return retrofit
         }
+    }
 
-        fun okhttpClient(context: Context?): OkHttpClient {
+    private lateinit var apiService: UserSessionCall
 
-            var retrofitClient = OkHttpClient.Builder()
-                .readTimeout(40, TimeUnit.SECONDS)
-                .connectTimeout(40, TimeUnit.SECONDS)
-                .addInterceptor(AuthInterceptor(context))
+    fun getApiService(): UserSessionCall {
+
+        if (!::apiService.isInitialized) {
+            var retrofitClient = Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
-            return retrofitClient
+            apiService = retrofitClient.create(UserSessionCall::class.java)
         }
+
+        return apiService
+    }
+
+    private fun okhttpClient(context: Context): OkHttpClient {
+        return OkHttpClient.Builder()
+            .addInterceptor(AuthInterceptor(context))
+            .build()
     }
 }

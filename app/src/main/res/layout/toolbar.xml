@@ -9,11 +9,16 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="JOBLINK"
-        android:textSize="40dp"
+        android:layout_height="wrap_content"
+        android:text="joblink"
+        android:textSize="35dp"
         android:textStyle="bold"
+        android:shadowRadius="1"
+        android:shadowDx="5"
+        android:shadowDy="8"
+        android:shadowColor="@android:color/holo_orange_dark"
         android:fontFamily="@font/abel_regular"
+        android:textColor="@android:color/white"
         />
 
 </androidx.appcompat.widget.Toolbar>

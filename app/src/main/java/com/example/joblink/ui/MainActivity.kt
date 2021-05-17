@@ -15,11 +15,21 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import com.example.joblink.R
+import com.example.joblink.api.RetrofitApi
+import com.example.joblink.api.SessionManager
+import com.example.joblink.model.LoginRequestModel
+import com.example.joblink.model.LoginResponseModel
+import com.example.joblink.model.PublicationResponseModel
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var apiClient: RetrofitApi
+    private lateinit var sessionManager: SessionManager
 
-    private var cancellationSignal: CancellationSignal? = null
+    /* private var cancellationSignal: CancellationSignal? = null
 
     private val authecationCallback: BiometricPrompt.AuthenticationCallback
         get() =
@@ -37,21 +47,64 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-
-    @RequiresApi(Build.VERSION_CODES.P)
+    @RequiresApi(Build.VERSION_CODES.P)*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //parte que abre o layout de criar conta
-        val buttonAbrirCadastro = findViewById<TextView>(R.id.abrir_criar_conta)
+        apiClient = RetrofitApi()
+        sessionManager = SessionManager(this)
 
-        buttonAbrirCadastro.setOnClickListener {
-            val abrirCadastro = Intent(this, HomeActivity::class.java)
-            startActivity(abrirCadastro)
-        }
+        val call = apiClient.getApiService().login(LoginRequestModel(
+                email = "fernandojackson@gmail.bin",
+                password = "fernandojackson"
+            )
+        )
 
-        checkBiometricSupport()
+        call.enqueue(object : Callback<LoginResponseModel> {
+            override fun onFailure(call: Call<LoginResponseModel>, t: Throwable) {
+                // Error logging in
+            }
+
+            override fun onResponse(
+                call: Call<LoginResponseModel>,
+                response: Response<LoginResponseModel>
+            ) {
+                val loginResponse = response.body()
+
+                if (loginResponse?.statusCode == 200 && loginResponse.client != null) {
+                    sessionManager.saveAuthToken(loginResponse.token)
+                } else {
+                    // Error logging in
+                }
+            }
+        })
+
+        fun fetchPosts() {
+            // Passe o token como parâmetro
+            apiClient.getApiService().getPublication()
+                .enqueue(object : Callback<PublicationResponseModel> {
+                    override fun onFailure(call: Call<PublicationResponseModel>, t: Throwable) {
+                        // Erro ao buscar postagens
+                    }
+
+                    override fun onResponse(
+                        call: Call<PublicationResponseModel>,
+                        response: Response<PublicationResponseModel>
+                    ) {
+                        // Manipular função para exibir postagens
+                    }
+                })
+
+            //parte que abre o layout de criar conta
+            val buttonAbrirCadastro = findViewById<TextView>(R.id.abrir_criar_conta)
+
+            buttonAbrirCadastro.setOnClickListener {
+                val abrirCadastro = Intent(this, HomeActivity::class.java)
+                startActivity(abrirCadastro)
+            }
+
+            /*checkBiometricSupport()
 
         button_biometria.setOnClickListener {
 
@@ -70,12 +123,11 @@ class MainActivity : AppCompatActivity() {
                 mainExecutor,
                 authecationCallback
             )
+        }*/
         }
-    }
 
-    private fun notifyUser(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
+        /*private fun notifyUser(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()    }
 
     private fun getCancellationsSignal(): CancellationSignal {
         cancellationSignal = CancellationSignal()
@@ -104,5 +156,6 @@ class MainActivity : AppCompatActivity() {
         return if (packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)) {
             true
         } else true
-    }
+    }*/
+  }
 }

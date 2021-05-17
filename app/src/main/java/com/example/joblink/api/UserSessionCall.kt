@@ -1,11 +1,18 @@
 package com.example.joblink.api
 
-import com.example.joblink.model.UserSession
+import com.example.joblink.model.LoginRequestModel
+import com.example.joblink.model.LoginResponseModel
+import com.example.joblink.model.PublicationModel
+import com.example.joblink.model.PublicationResponseModel
 import retrofit2.Call
-import retrofit2.http.GET
+import retrofit2.http.*
 
 interface UserSessionCall {
 
-    @GET("posts")
-    fun getUserSession() : Call<List<UserSession>>
+    @POST("sessions")
+    @FormUrlEncoded
+    fun login(@Body requestModel: LoginRequestModel): Call<LoginResponseModel>
+
+    @GET("feed")
+    fun getPublication(): Call<PublicationResponseModel>
 }

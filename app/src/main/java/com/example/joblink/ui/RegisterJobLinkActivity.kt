@@ -3,14 +3,7 @@ package com.example.joblink.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
 import com.example.joblink.R
-import com.example.joblink.api.RetrofitApi
-import com.example.joblink.api.UserSessionCall
-import com.example.joblink.model.UserSession
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class RegisterJobLinkActivity : AppCompatActivity() {
 
@@ -24,6 +17,5 @@ class RegisterJobLinkActivity : AppCompatActivity() {
         buttonVoltar.setOnClickListener {
             onBackPressed()
         }
-
     }
 }
