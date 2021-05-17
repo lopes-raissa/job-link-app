@@ -10,6 +10,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CancellationSignal
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -56,14 +57,15 @@ class MainActivity : AppCompatActivity() {
         sessionManager = SessionManager(this)
 
         val call = apiClient.getApiService().login(LoginRequestModel(
-                email = "fernandojackson@gmail.bin",
-                password = "fernandojackson"
+                email = "matheus@henrique.com",
+                password = "123456"
             )
         )
 
         call.enqueue(object : Callback<LoginResponseModel> {
             override fun onFailure(call: Call<LoginResponseModel>, t: Throwable) {
                 // Error logging in
+                Log.e("Teste", t.message.toString());
             }
 
             override fun onResponse(
@@ -72,8 +74,10 @@ class MainActivity : AppCompatActivity() {
             ) {
                 val loginResponse = response.body()
 
-                if (loginResponse?.statusCode == 200 && loginResponse.client != null) {
-                    sessionManager.saveAuthToken(loginResponse.token)
+                if (response.code().toString() == "200" ||response.code().toString() == "201" && loginResponse!!.client != null) {
+                    sessionManager.saveAuthToken(loginResponse!!.token)
+
+                    Log.e("Entrou no IF",response.code().toString())
                 } else {
                     // Error logging in
                 }
@@ -82,7 +86,7 @@ class MainActivity : AppCompatActivity() {
 
         fun fetchPosts() {
             // Passe o token como parâmetro
-            apiClient.getApiService().getPublication()
+            /*apiClient.getApiService().getPublication()
                 .enqueue(object : Callback<PublicationResponseModel> {
                     override fun onFailure(call: Call<PublicationResponseModel>, t: Throwable) {
                         // Erro ao buscar postagens
@@ -102,7 +106,7 @@ class MainActivity : AppCompatActivity() {
             buttonAbrirCadastro.setOnClickListener {
                 val abrirCadastro = Intent(this, HomeActivity::class.java)
                 startActivity(abrirCadastro)
-            }
+            }*/
 
             /*checkBiometricSupport()
 

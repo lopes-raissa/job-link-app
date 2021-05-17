@@ -10,7 +10,6 @@ import retrofit2.http.*
 interface UserSessionCall {
 
     @POST("sessions")
-    @FormUrlEncoded
     fun login(@Body requestModel: LoginRequestModel): Call<LoginResponseModel>
 
     @GET("feed")
