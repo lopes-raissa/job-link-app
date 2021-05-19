@@ -20,6 +20,9 @@
     <string name="forms1">Selecione o tipo de serviço</string>string>
     <string name="forms2">Selecione a urgência do serviço</string>string>
     <string name="forms3">Selecione o atendimento</string>string>
+    <string name="message">Digite sua mensagem</string>
+    <string name="enviar">Enviar</string>
+    <string name="conversa">Digite uma mensagem...</string>
 
     <string-array name="categorias">
         <item>Categorias</item>
