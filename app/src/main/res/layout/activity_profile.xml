@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/holo_orange_dark"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="@drawable/retangulo_redondo"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/perfil"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="110dp"
+                android:text="Mariana Santana"
+                android:textColor="@android:color/black"
+                android:textSize="25dp"
+                android:layout_marginTop="20dp"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mariana@gmail.com"
+                android:layout_marginLeft="150dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="40dp"
+                android:text="ÚLTIMAS ATIVIDADES"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:text="Mariana Santana solicitou um serviço de encanamento de Manuel Ribeiro há três semanas."
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:text="Concluído."
+                android:textStyle="bold"
+                android:layout_marginLeft="290dp"
+                android:drawableRight="@drawable/ic_baseline_check_24"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:text="Mariana Santana solicitou um serviço de eletricista de Felipe Oliveira há três dias."
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="20dp"
+                android:text="Em processo."
+                android:textStyle="bold"
+                android:layout_marginLeft="280dp"
+                android:drawableRight="@drawable/ic_baseline_sync_24"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:text="Mariana Santana solicitou um serviço de pintor de Roberto Gomes há dois dias."
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="20dp"
+                android:text="Em processo."
+                android:textStyle="bold"
+                android:layout_marginLeft="280dp"
+                android:drawableRight="@drawable/ic_baseline_sync_24"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Criado por JOBLINK."
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/white"/>
+
+
+</RelativeLayout>
