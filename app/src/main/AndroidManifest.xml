@@ -13,7 +13,8 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ChatActivity"></activity>
+        <activity android:name=".ui.ProfileActivity"></activity>
+        <activity android:name=".ui.ChatActivity" />
         <activity
             android:name=".ui.SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">

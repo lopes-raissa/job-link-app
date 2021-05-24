@@ -15,7 +15,7 @@
 
     <style name="edit_text_scrollView">
         <item name="android:padding">12dp</item>
-        <item name="android:layout_width">270dp</item>
+        <item name="android:layout_width">269dp</item>
         <item name="android:layout_height">55dp</item>
         <item name="android:layout_marginTop">12dp</item>
         <item name="android:layout_marginEnd">12dp</item>
