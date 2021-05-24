@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">JobLink</string>
+
     <string name="login">Faça Login</string>
     <string name="email">Digite seu email</string>
-    <string name="senha">Digite sua senha</string>
-    <string name="entrar">Entrar</string>
+    <string name="password">Digite sua senha</string>
+    <string name="sign_in">Entrar</string>
     <string name="biometria">Biometria</string>
     <string name="esqueceu">Esqueceu sua senha ?</string>
     <string name="criarconta">Criar Conta</string>
@@ -24,6 +25,8 @@
     <string name="enviar">Enviar</string>
     <string name="conversa">Digite uma mensagem...</string>
 
+
+    <!--  Provisório-->
     <string-array name="categorias">
         <item>Categorias</item>
         <item>Consertos elétricos</item>
@@ -53,6 +56,5 @@
         <item>Alta</item>
         <item>Urgente</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

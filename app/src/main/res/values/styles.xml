@@ -28,9 +28,4 @@
         <item name="android:layout_height">320dp</item>
     </style>
 
-    <style name="Theme.AppCompat.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
 </resources>

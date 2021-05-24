@@ -13,5 +13,5 @@ interface UserSessionCall {
     fun login(@Body requestModel: LoginRequestModel): Call<LoginResponseModel>
 
     @GET("feed")
-    fun getPublication(): Call<PublicationResponseModel>
+    fun getPublication(): Call<List<PublicationModel>>
 }

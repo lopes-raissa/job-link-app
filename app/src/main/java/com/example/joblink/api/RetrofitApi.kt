@@ -37,8 +37,10 @@ class RetrofitApi {
         return apiService
     }
 
-    private fun okhttpClient(context: Context): OkHttpClient {
+    private fun client(context: Context): OkHttpClient {
         return OkHttpClient.Builder()
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .readTimeout(10, TimeUnit.SECONDS)
             .addInterceptor(AuthInterceptor(context))
             .build()
     }
