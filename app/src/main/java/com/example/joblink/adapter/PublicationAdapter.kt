@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.joblink.R
 import com.example.joblink.model.PublicationModel
+import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.layout_list_publications.view.*
 
 class PublicationAdapter(val context: FragmentActivity?): RecyclerView.Adapter<PublicationAdapter.PublicationViewHolder>() {

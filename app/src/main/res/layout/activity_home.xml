@@ -17,16 +17,6 @@
         android:layout_below="@+id/toolbar"
         android:layout_above="@+id/bottom_navigation"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/id_menage"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_above="@+id/bottom_navigation"
-        android:layout_alignEnd="@id/frame_fragments"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:background="@color/colorPrimary" />
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
