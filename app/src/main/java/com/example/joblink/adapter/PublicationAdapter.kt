@@ -38,7 +38,7 @@ class PublicationAdapter(val context: FragmentActivity?): RecyclerView.Adapter<P
 
     class PublicationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(publicationModel: PublicationModel) {
-            itemView.textNameUser.text = publicationModel.name
+            itemView.textNameUser.text = publicationModel.user.name
             itemView.textDatePublication.text = publicationModel.datePublication
             itemView.textProfission.text = publicationModel.profission
             itemView.textDescription.text = publicationModel.description

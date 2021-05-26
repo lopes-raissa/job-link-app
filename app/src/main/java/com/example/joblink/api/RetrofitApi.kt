@@ -9,6 +9,18 @@ import java.util.concurrent.TimeUnit
 
 class RetrofitApi {
 
+    companion object {
+        fun getRetrofit(): Retrofit {
+
+            var retrofit = Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+            return retrofit
+
+        }
+    }
+
     private lateinit var apiService: UserSessionCall
 
     fun getApiService(context: Context): UserSessionCall {
@@ -17,7 +29,7 @@ class RetrofitApi {
             var retrofitClient = Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(okhttpClient(context))
+                .client(client(context))
                 .build()
 
             apiService = retrofitClient.create(UserSessionCall::class.java)

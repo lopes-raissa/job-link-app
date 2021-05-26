@@ -6,56 +6,37 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.hardware.biometrics.BiometricPrompt
-import android.net.ConnectivityManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CancellationSignal
-import android.text.TextUtils
 import android.util.Log
-<<<<<<< HEAD
-import android.view.LayoutInflater
-=======
-import android.util.Patterns
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
->>>>>>> 971e2fb4db1c56d02c6f0b9039f318a81a3a6a09
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
-<<<<<<< HEAD
-import androidx.core.content.ContextCompat
-=======
-import androidx.core.util.PatternsCompat
->>>>>>> 971e2fb4db1c56d02c6f0b9039f318a81a3a6a09
 import com.example.joblink.R
 import com.example.joblink.api.RetrofitApi
 import com.example.joblink.api.SessionManager
-import com.example.joblink.model.LoginRequestModel
+import com.example.joblink.api.UserSessionCall
+import com.example.joblink.model.UserLoginModel
 import com.example.joblink.model.LoginResponseModel
-import com.example.joblink.model.PublicationResponseModel
-import com.example.joblink.util.NetworkChecker
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.regex.Pattern
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     lateinit var emailField: EditText
     lateinit var passwordField: EditText
     lateinit var buttonSignIn: Button
 
-    private lateinit var apiClient: RetrofitApi
     private lateinit var sessionManager: SessionManager
-
     private var cancellationSignal: CancellationSignal? = null
-<<<<<<< HEAD
-=======
-
->>>>>>> 971e2fb4db1c56d02c6f0b9039f318a81a3a6a09
     private val authecationCallback: BiometricPrompt.AuthenticationCallback
         get() =
             @RequiresApi(Build.VERSION_CODES.P)
@@ -72,25 +53,26 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+    private fun goToHome() {
+        val homeActivity = Intent(this, HomeActivity::class.java)
+        startActivity(homeActivity)
+    }
+
     @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         emailField = findViewById(R.id.email)
-        passwordField = findViewById(R.id.et_password)
+        passwordField = findViewById(R.id.et_password_login)
         buttonSignIn = findViewById(R.id.button_sign_in)
 
-        apiClient = RetrofitApi()
-        sessionManager = SessionManager(this)
-
         //parte que abre o layout de criar conta
-<<<<<<< HEAD
-        val buttonAbrirCadastro = findViewById<TextView>(R.id.tv_create)
+        val GoToRegister = findViewById<TextView>(R.id.tv_create)
 
-        buttonAbrirCadastro.setOnClickListener {
-            val abrirCadastro = Intent(this, HomeActivity::class.java)
-            startActivity(abrirCadastro)
+        GoToRegister.setOnClickListener {
+            val openRegistration = Intent(this, RegisterJobLinkActivity::class.java)
+            startActivity(openRegistration)
         }
 
         checkBiometricSupport()
@@ -113,146 +95,11 @@ class MainActivity : AppCompatActivity() {
                 authecationCallback
             )
         }
-
-        val call = apiClient.getApiService().login(
-            LoginRequestModel(
-                email = "matheus@henrique.com",
-                password = "123456"
-            )
-        )
-
-        call.enqueue(object : Callback<LoginResponseModel> {
-            override fun onFailure(call: Call<LoginResponseModel>, t: Throwable) {
-                // Error logging in
-                Log.e("Teste", t.message.toString());
-            }
-
-            override fun onResponse(
-                call: Call<LoginResponseModel>,
-                response: Response<LoginResponseModel>
-            ) {
-                val loginResponse = response.body()
-
-                if (response.code().toString() == "200" || response.code()
-                        .toString() == "201" && loginResponse!!.client != null
-                ) {
-                    sessionManager.saveAuthToken(loginResponse!!.token)
-
-                    Log.e("Entrou no IF", response.code().toString())
-                } else {
-                    // Error logging in
-                }
-            }
-        })
-
-        fun fetchPosts() {
-            // Passe o token como parâmetro
-            apiClient.getApiService().getPublication()
-                .enqueue(object : Callback<PublicationResponseModel> {
-                    override fun onFailure(call: Call<PublicationResponseModel>, t: Throwable) {
-                        // Erro ao buscar postagens
-                    }
-
-                    override fun onResponse(
-                        call: Call<PublicationResponseModel>,
-                        response: Response<PublicationResponseModel>
-                    ) {
-                        // Manipular função para exibir postagens
-                    }
-                })
-=======
-        val buttonAbrirCadastro = findViewById<TextView>(R.id.abrir_criar_conta)
-
-        buttonAbrirCadastro.setOnClickListener {
-            val abrirCadastro = Intent(this, HomeActivity::class.java)
-            startActivity(abrirCadastro)
-        }
-
-        checkBiometricSupport()
-
-        button_biometria.setOnClickListener {
-
-            val biometricPrompt = BiometricPrompt.Builder(this)
-                .setTitle("Logar com Biometria")
-                .setDescription("Este aplicativo usa proteção de impressão digital para manter seus dados seguros")
-                .setNegativeButton(
-                    "Cancelar",
-                    this.mainExecutor,
-                    DialogInterface.OnClickListener { dialog, which ->
-                        notifyUser("Autenticação Cancelada")
-                    }).build()
-
-            biometricPrompt.authenticate(
-                getCancellationsSignal(),
-                mainExecutor,
-                authecationCallback
-            )
->>>>>>> 971e2fb4db1c56d02c6f0b9039f318a81a3a6a09
-        }
-    }
-
-<<<<<<< HEAD
-=======
 
         //Botão Login chamado
-        buttonSignIn.setOnClickListener {
-
-            val call = apiClient.getApiService(this).login(
-                LoginRequestModel(
-                    email = emailField.text.toString(),
-                    password = passwordField.text.toString()
-                )
-            )
-
-            fomsValidation()
-
-            call.enqueue(object : Callback<LoginResponseModel> {
-                override fun onFailure(call: Call<LoginResponseModel>, t: Throwable) {
-                    // Error logging in
-                    Log.e("Teste", t.message.toString());
-
-                }
-
-                override fun onResponse(
-                    call: Call<LoginResponseModel>,
-                    response: Response<LoginResponseModel>
-                ) {
-                    val loginResponse = response.body()
-
-                    if (response.code().toString() == "200" || response.code()
-                            .toString() == "201" && loginResponse?.client != null
-                    ) {
-                        sessionManager.saveAuthToken(loginResponse!!.token)
-
-                    } else {
-                        // Error logging in
-                    }
-                }
-            })
-
-            //Função para buscar postagens
-            fun fetchPosts() {
-                // Passe o token como parâmetro
-                apiClient.getApiService(this).getPublication()
-                    .enqueue(object : Callback<PublicationResponseModel> {
-                        override fun onFailure(call: Call<PublicationResponseModel>, t: Throwable) {
-                            // Erro ao buscar postagens
-                        }
-
-                        override fun onResponse(
-                            call: Call<PublicationResponseModel>,
-                            response: Response<PublicationResponseModel>
-                        ) {
-                            // Manipular função para exibir postagens
-                        }
-                    })
-            }
-
-        }
-
+        buttonSignIn.setOnClickListener(this)
     }
 
->>>>>>> 971e2fb4db1c56d02c6f0b9039f318a81a3a6a09
     private fun notifyUser(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
@@ -285,40 +132,52 @@ class MainActivity : AppCompatActivity() {
             true
         } else true
     }
-<<<<<<< HEAD
-=======
 
-    //Funções para Validar Campos
-    private fun fomsValidation() {
+    override fun onClick(v: View?) {
 
+        if (emailField.text.toString() == "" || passwordField.text.toString() == "") {
+            Toast.makeText(this@MainActivity, "É preciso efetuar o Login", Toast.LENGTH_LONG).show()
+        } else {
+            loggedIn()
+        }
+    }
 
-        if (!isValidationEmail(emailField.text.toString())) {
-            emailField.requestFocus()
-        } else
-            if (formIsEmpty(passwordField.text.toString())) {
-                passwordField.requestFocus()
+    fun loggedIn() {
+
+        val user = UserLoginModel(
+            email = emailField.text.toString(),
+            password = passwordField.text.toString()
+        )
+
+        val retrofit = RetrofitApi.getRetrofit()
+        val loginCall = retrofit.create(UserSessionCall::class.java)
+
+        val call = loginCall.login(user)
+
+        call.enqueue(object : Callback<LoginResponseModel> {
+            override fun onFailure(call: Call<LoginResponseModel>, t: Throwable) {
+                Toast.makeText(this@MainActivity, "A conexão falhou :(", Toast.LENGTH_LONG).show()
+                Log.e("ERRO_CONEXÃO", t.message.toString())
             }
+
+            override fun onResponse(
+                call: Call<LoginResponseModel>,
+                response: Response<LoginResponseModel>
+            ) {
+                val loginResponse = response.body()
+
+                if (response.code().toString() == "200" || response.code()
+                        .toString() == "201" && loginResponse?.client != null
+                ) {
+                    sessionManager.saveAuthToken(loginResponse!!.token)
+                    Log.e("ERRO_CONEXÃO", loginResponse.token.toString());
+                    goToHome()
+
+                } else {
+                    Toast.makeText(this@MainActivity, "email ou senha incorreto", Toast.LENGTH_LONG)
+                        .show()
+                }
+            }
+        })
     }
-
-
-    private fun formIsEmpty(price: String): Boolean {
-        var error = false
-
-        if (TextUtils.isEmpty(price) || price.trim().isEmpty())
-            return error
-
-        return error
-    }
-
-    private fun isValidationEmail(email: String): Boolean {
-        var error = false
-
-        if (!formIsEmpty(email) && PatternsCompat.EMAIL_ADDRESS.matcher(email).matches());
-
-        return error
-
-    }
-
-
->>>>>>> 971e2fb4db1c56d02c6f0b9039f318a81a3a6a09
 }

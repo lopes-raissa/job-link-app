@@ -128,13 +128,8 @@
             android:layout_width="0dp"
             android:layout_height="38dp"
             android:layout_marginTop="14dp"
-<<<<<<< HEAD
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-=======
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
->>>>>>> 971e2fb4db1c56d02c6f0b9039f318a81a3a6a09
             android:layout_marginBottom="5dp"
             android:background="@color/colorPrimary"
             android:text="Contatar"

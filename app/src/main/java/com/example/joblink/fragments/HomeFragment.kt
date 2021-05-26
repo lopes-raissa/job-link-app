@@ -13,13 +13,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.joblink.R
 import com.example.joblink.adapter.PublicationAdapter
 import com.example.joblink.api.RetrofitApi
-<<<<<<< HEAD
 import com.example.joblink.api.UserSessionCall
 import com.example.joblink.model.PublicationModel
-=======
 import com.example.joblink.model.PublicationResponseModel
 import com.example.joblink.ui.MainActivity
->>>>>>> 971e2fb4db1c56d02c6f0b9039f318a81a3a6a09
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,8 +24,6 @@ import retrofit2.Response
 class HomeFragment : Fragment() {
 
     lateinit var adapterPublication: PublicationAdapter
-
-    private lateinit var apiClient: RetrofitApi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,14 +43,11 @@ class HomeFragment : Fragment() {
 
         startRecycleView()
 
-<<<<<<< HEAD
         Feedlist()
-=======
->>>>>>> 971e2fb4db1c56d02c6f0b9039f318a81a3a6a09
     }
 
     private fun startRecycleView() {
-        recycleViewPublcation.layoutManager = LinearLayoutManager(activity)
+        recycleViewPublcation.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
     }
 
     private fun Feedlist() {
@@ -65,7 +57,6 @@ class HomeFragment : Fragment() {
         val retrofit = RetrofitApi.getRetrofit()
         val destinosRecentesCall = retrofit.create(UserSessionCall::class.java)
 
-<<<<<<< HEAD
         val call = destinosRecentesCall.getPublication()
 
         call.enqueue(object : Callback<List<PublicationModel>> {
@@ -79,12 +70,10 @@ class HomeFragment : Fragment() {
                 call: Call<List<PublicationModel>>,
                 response: Response<List<PublicationModel>>
             ) {
+                Log.i("Teste", response.body().toString())
                 publication = response.body()!! //Double BANG!!
                 adapterPublication.updateListPublication(publication)
             }
         })
     }
-=======
-
->>>>>>> 971e2fb4db1c56d02c6f0b9039f318a81a3a6a09
 }
