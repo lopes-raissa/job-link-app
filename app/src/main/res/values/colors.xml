@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#e64a19</color>
     <color name="colorPrimaryDark">#c42d00</color>
-    <color name="colorAccent">#ff7d47</color>
+    <color name="colorAccent">#ffff8800</color>
 
     <color name="backgroundOffice">#DEE0E7</color>
     <color name="colorBiometria">#EDF1FE</color>

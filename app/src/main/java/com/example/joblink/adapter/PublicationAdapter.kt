@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.joblink.R
 import com.example.joblink.model.PublicationModel
+import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.layout_list_publications.view.*
 
 class PublicationAdapter(val context: FragmentActivity?): RecyclerView.Adapter<PublicationAdapter.PublicationViewHolder>() {
@@ -37,7 +38,7 @@ class PublicationAdapter(val context: FragmentActivity?): RecyclerView.Adapter<P
 
     class PublicationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(publicationModel: PublicationModel) {
-            itemView.textNameUser.text = publicationModel.name
+            itemView.textNameUser.text = publicationModel.user.name
             itemView.textDatePublication.text = publicationModel.datePublication
             itemView.textProfission.text = publicationModel.profission
             itemView.textDescription.text = publicationModel.description

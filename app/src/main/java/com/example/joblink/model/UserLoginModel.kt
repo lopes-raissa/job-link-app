@@ -2,7 +2,7 @@ package com.example.joblink.model
 
 import com.google.gson.annotations.SerializedName
 
-data class LoginRequestModel(
+data class UserLoginModel(
     @SerializedName("email")
     var email: String,
     @SerializedName("password")
