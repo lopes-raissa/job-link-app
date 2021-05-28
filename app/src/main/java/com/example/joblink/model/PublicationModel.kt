@@ -5,8 +5,6 @@ import com.google.gson.annotations.SerializedName
 data class PublicationModel(
     @SerializedName("id")
     var id: Long = 0,
-    @SerializedName("name")
-    var name: String = "",
     @SerializedName("title")
     var title: String = "",
     @SerializedName("profission")
@@ -24,5 +22,10 @@ data class PublicationModel(
     @SerializedName("is_announcement")
     var is_announcement: Boolean = true,
     @SerializedName("freelancerNote")
-    var freelancerNote: Float = 1.0f
+    var freelancerNote: Float = 1.0f,
+    @SerializedName("User")
+    var user : User,
+    @SerializedName("User")
+    var categories: List<CategoryModel>
+
 )

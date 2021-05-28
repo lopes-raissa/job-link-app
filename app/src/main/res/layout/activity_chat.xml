@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundOffice"
+    tools:context=".ui.Forms">
+
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="30dp"
+        android:text="Fabiana Nogueira"
+        android:textSize="20dp"
+        android:textColor="@android:color/black"
+       android:layout_marginLeft="116dp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="64dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        app:srcCompat="@drawable/perfil" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_online"
+        android:drawableRight="@drawable/ic_baseline_lens_24"
+        android:paddingRight="10dp"
+        android:text="online" />
+
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/retangulo_arredondado"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="25dp"
+        android:text="Olá! Gostaria de contratar um serviço, meu cano da pia da cozinha está entupido há 3 dias."/>
+
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="190dp"
+        android:background="@drawable/retangulo_arredondado"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="140dp"/>
+
+    <TextView
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="20dp"
+        android:text="Olá! Onde a senhora reside? Cobro 150 reais pela visita, para avaliar o problema."/>
+
+
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="280dp"
+        android:background="@drawable/retangulo_arredondado"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="25dp"
+        android:text="Moro em Jandira, no centro. Ok, eu pago. Você está disponível no fim de semana?"/>
+
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="370dp"
+        android:background="@drawable/retangulo_arredondado"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="140dp"/>
+
+    <TextView
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="20dp"
+        android:text="Estou disponível sábado às 9hs. Sobre o pagamento, aceito dinheiro, cartão e pix. Passe seu endereço, por favor."/>
+
+
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="460dp"
+        android:background="@drawable/retangulo_arredondado"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="470dp"
+        android:layout_marginLeft="25dp"
+        android:text="Claro! Rua dos Bobos, Centro, nº 10. Próximo ao mercado Barbosa, pode estacionar em frente a minha casa."/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@drawable/button_conversa"
+        android:layout_marginTop="610dp"
+        android:layout_marginLeft="70dp"
+        android:hint="@string/conversa"/>
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_send"
+        android:layout_marginTop="605dp"
+        android:layout_marginLeft="5dp"
+        android:drawableRight="@drawable/ic_baseline_send_24"
+        android:paddingRight="10dp"/>
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_send"
+        android:layout_marginTop="605dp"
+        android:layout_marginLeft="330dp"
+        android:drawableRight="@drawable/ic_baseline_image_24"
+        android:paddingRight="15dp"
+        android:drawableLeft="@drawable/ic_baseline_attach_file_24"
+        android:paddingLeft="10dp"/>
+
+
+
+</RelativeLayout>

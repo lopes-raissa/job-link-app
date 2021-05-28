@@ -10,25 +10,26 @@ import java.util.concurrent.TimeUnit
 class RetrofitApi {
 
     companion object {
-        fun getRetrofit() : Retrofit {
+        fun getRetrofit(): Retrofit {
 
             var retrofit = Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-
             return retrofit
+
         }
     }
 
     private lateinit var apiService: UserSessionCall
 
-    fun getApiService(): UserSessionCall {
+    fun getApiService(context: Context): UserSessionCall {
 
         if (!::apiService.isInitialized) {
             var retrofitClient = Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(client(context))
                 .build()
 
             apiService = retrofitClient.create(UserSessionCall::class.java)
@@ -37,8 +38,10 @@ class RetrofitApi {
         return apiService
     }
 
-    private fun okhttpClient(context: Context): OkHttpClient {
+    private fun client(context: Context): OkHttpClient {
         return OkHttpClient.Builder()
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .readTimeout(10, TimeUnit.SECONDS)
             .addInterceptor(AuthInterceptor(context))
             .build()
     }

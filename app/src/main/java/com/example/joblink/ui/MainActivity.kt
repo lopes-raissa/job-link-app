@@ -10,6 +10,10 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CancellationSignal
+import android.util.Log
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -17,20 +21,22 @@ import androidx.core.app.ActivityCompat
 import com.example.joblink.R
 import com.example.joblink.api.RetrofitApi
 import com.example.joblink.api.SessionManager
-import com.example.joblink.model.LoginRequestModel
+import com.example.joblink.api.UserSessionCall
+import com.example.joblink.model.UserLoginModel
 import com.example.joblink.model.LoginResponseModel
-import com.example.joblink.model.PublicationResponseModel
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var apiClient: RetrofitApi
+class MainActivity : AppCompatActivity(), View.OnClickListener {
+
+    lateinit var emailField: EditText
+    lateinit var passwordField: EditText
+    lateinit var buttonSignIn: Button
+
     private lateinit var sessionManager: SessionManager
-
-    /* private var cancellationSignal: CancellationSignal? = null
-
+    private var cancellationSignal: CancellationSignal? = null
     private val authecationCallback: BiometricPrompt.AuthenticationCallback
         get() =
             @RequiresApi(Build.VERSION_CODES.P)
@@ -47,64 +53,29 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-    @RequiresApi(Build.VERSION_CODES.P)*/
+    private fun goToHome() {
+        val homeActivity = Intent(this, HomeActivity::class.java)
+        startActivity(homeActivity)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        apiClient = RetrofitApi()
-        sessionManager = SessionManager(this)
+        emailField = findViewById(R.id.email)
+        passwordField = findViewById(R.id.et_password_login)
+        buttonSignIn = findViewById(R.id.button_sign_in)
 
-        val call = apiClient.getApiService().login(LoginRequestModel(
-                email = "fernandojackson@gmail.bin",
-                password = "fernandojackson"
-            )
-        )
+        //parte que abre o layout de criar conta
+        val GoToRegister = findViewById<TextView>(R.id.tv_create)
 
-        call.enqueue(object : Callback<LoginResponseModel> {
-            override fun onFailure(call: Call<LoginResponseModel>, t: Throwable) {
-                // Error logging in
-            }
+        GoToRegister.setOnClickListener {
+            val openRegistration = Intent(this, RegisterJobLinkActivity::class.java)
+            startActivity(openRegistration)
+        }
 
-            override fun onResponse(
-                call: Call<LoginResponseModel>,
-                response: Response<LoginResponseModel>
-            ) {
-                val loginResponse = response.body()
-
-                if (loginResponse?.statusCode == 200 && loginResponse.client != null) {
-                    sessionManager.saveAuthToken(loginResponse.token)
-                } else {
-                    // Error logging in
-                }
-            }
-        })
-
-        fun fetchPosts() {
-            // Passe o token como parâmetro
-            apiClient.getApiService().getPublication()
-                .enqueue(object : Callback<PublicationResponseModel> {
-                    override fun onFailure(call: Call<PublicationResponseModel>, t: Throwable) {
-                        // Erro ao buscar postagens
-                    }
-
-                    override fun onResponse(
-                        call: Call<PublicationResponseModel>,
-                        response: Response<PublicationResponseModel>
-                    ) {
-                        // Manipular função para exibir postagens
-                    }
-                })
-
-            //parte que abre o layout de criar conta
-            val buttonAbrirCadastro = findViewById<TextView>(R.id.abrir_criar_conta)
-
-            buttonAbrirCadastro.setOnClickListener {
-                val abrirCadastro = Intent(this, HomeActivity::class.java)
-                startActivity(abrirCadastro)
-            }
-
-            /*checkBiometricSupport()
+        checkBiometricSupport()
 
         button_biometria.setOnClickListener {
 
@@ -123,11 +94,15 @@ class MainActivity : AppCompatActivity() {
                 mainExecutor,
                 authecationCallback
             )
-        }*/
         }
 
-        /*private fun notifyUser(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()    }
+        //Botão Login chamado
+        buttonSignIn.setOnClickListener(this)
+    }
+
+    private fun notifyUser(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
 
     private fun getCancellationsSignal(): CancellationSignal {
         cancellationSignal = CancellationSignal()
@@ -156,6 +131,53 @@ class MainActivity : AppCompatActivity() {
         return if (packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)) {
             true
         } else true
-    }*/
-  }
+    }
+
+    override fun onClick(v: View?) {
+
+        if (emailField.text.toString() == "" || passwordField.text.toString() == "") {
+            Toast.makeText(this@MainActivity, "É preciso efetuar o Login", Toast.LENGTH_LONG).show()
+        } else {
+            loggedIn()
+        }
+    }
+
+    fun loggedIn() {
+
+        val user = UserLoginModel(
+            email = emailField.text.toString(),
+            password = passwordField.text.toString()
+        )
+
+        val retrofit = RetrofitApi.getRetrofit()
+        val loginCall = retrofit.create(UserSessionCall::class.java)
+
+        val call = loginCall.login(user)
+
+        call.enqueue(object : Callback<LoginResponseModel> {
+            override fun onFailure(call: Call<LoginResponseModel>, t: Throwable) {
+                Toast.makeText(this@MainActivity, "A conexão falhou :(", Toast.LENGTH_LONG).show()
+                Log.e("ERRO_CONEXÃO", t.message.toString())
+            }
+
+            override fun onResponse(
+                call: Call<LoginResponseModel>,
+                response: Response<LoginResponseModel>
+            ) {
+                val loginResponse = response.body()
+
+                if (response.code().toString() == "200" || response.code()
+                        .toString() == "201" && loginResponse?.client != null
+                ) {
+                    sessionManager.saveAuthToken(loginResponse!!.token)
+                    Log.e("ERRO_CONEXÃO", loginResponse.token.toString());
+                    goToHome()
+
+                } else {
+                    Toast.makeText(this@MainActivity, "email ou senha incorreto", Toast.LENGTH_LONG)
+                        .show()
+                }
+            }
+        })
+    }
 }
