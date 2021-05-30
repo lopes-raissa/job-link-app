@@ -38,7 +38,7 @@
             android:layout_height="100dp"
             android:layout_below="@+id/cadastro"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/perfil" />
+            android:background="@drawable/add_photo" />
 
     </androidx.cardview.widget.CardView>
 

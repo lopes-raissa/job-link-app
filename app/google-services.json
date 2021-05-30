@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "237911618985",
+    "firebase_url": "https://joblinkauth-default-rtdb.firebaseio.com",
+    "project_id": "joblinkauth",
+    "storage_bucket": "joblinkauth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237911618985:android:f44e121afd7454b01740b8",
+        "android_client_info": {
+          "package_name": "com.example.joblink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237911618985-9b2buf4scj08q5rl299i1ndvtv6be1qf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK9VhtTphHj8Mvx9-iBRzi0-WctQrFWqc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237911618985-9b2buf4scj08q5rl299i1ndvtv6be1qf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

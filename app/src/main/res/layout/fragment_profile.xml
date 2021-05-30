@@ -6,14 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ProfileFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile"
-        android:textSize="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <include
+        android:id="@+id/toolbar_freelancer_register"
+        layout="@layout/toolbar" />
+
+    <Button
+        android:id="@+id/bt_selected_photo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_button_img_rounded"
+        android:drawableTop="@drawable/ic_add_a_photo"
+        android:drawableTint="@android:color/white"
+        android:paddingTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_freelancer_register" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_photo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_selected_photo"
+        app:layout_constraintEnd_toEndOf="@+id/bt_selected_photo"
+        app:layout_constraintStart_toStartOf="@+id/bt_selected_photo"
+        app:layout_constraintTop_toTopOf="@+id/bt_selected_photo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

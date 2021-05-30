@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 import com.example.joblink.R
 
-class RegisterJobLinkActivity : AppCompatActivity() {
+class ClientRegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

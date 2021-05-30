@@ -10,7 +10,4 @@ interface UserSessionCall {
 
     @POST("sessions")
     fun login(@Body modelUser: UserLoginModel): Call<LoginResponseModel>
-
-    @GET("feed")
-    fun getPublication(): Call<List<PublicationModel>>
 }
