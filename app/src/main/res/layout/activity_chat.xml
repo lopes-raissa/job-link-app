@@ -140,7 +140,6 @@
         android:layout_marginLeft="330dp"
         android:drawableRight="@drawable/ic_baseline_image_24"
         android:paddingRight="15dp"
-        android:drawableLeft="@drawable/ic_baseline_attach_file_24"
         android:paddingLeft="10dp"/>
 
 

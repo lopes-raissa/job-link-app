@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
 
         startRecycleView()
 
-        //Feedlist()
+        Feedlist()
     }
 
     private fun startRecycleView() {
@@ -52,27 +52,27 @@ class HomeFragment : Fragment() {
         rvViewPublcation.adapter = adapterPublication
     }
 
-//    private fun Feedlist() {
-//
-//        var publications: List<PublicationModel> = listOf<PublicationModel>()
-//
-//        val retrofit = RetrofitApi.getRetrofit()
-//        val feedCall = retrofit.create(FeedCall::class.java)
-//        val call = feedCall.getPublication()
-//
-//        call.enqueue(object : Callback<List<PublicationModel>> {
-//            override fun onFailure(call: Call<List<PublicationModel>>, t: Throwable) {
-//                Toast.makeText(activity, "Ops! falha na conexão.", Toast.LENGTH_SHORT).show()
-//            }
-//
-//            override fun onResponse(
-//                call: Call<List<PublicationModel>>,
-//                response: Response<List<PublicationModel>>
-//            ) {
-//                Log.i("Teste", response.body().toString())
-//                publications = response.body()!! //Double BANG!!
-//                adapterPublication.updateListPublication(publications)
-//            }
-//        })
-//    }
+    private fun Feedlist() {
+
+        var publications: List<PublicationModel> = listOf<PublicationModel>()
+
+        val retrofit = RetrofitApi.getRetrofit()
+        val feedCall = retrofit.create(FeedCall::class.java)
+        val call = feedCall.getPublication()
+
+        call.enqueue(object : Callback<List<PublicationModel>> {
+            override fun onFailure(call: Call<List<PublicationModel>>, t: Throwable) {
+                Toast.makeText(activity, "Ops! falha na conexão.", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(
+                call: Call<List<PublicationModel>>,
+                response: Response<List<PublicationModel>>
+            ) {
+                Log.i("Teste", response.body().toString())
+                publications = response.body()!! //Double BANG!!
+                adapterPublication.updateListPublication(publications)
+            }
+        })
+    }
 }

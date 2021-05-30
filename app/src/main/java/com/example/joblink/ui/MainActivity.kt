@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var passwordField: EditText
     lateinit var buttonSignIn: Button
 
-    private lateinit var sessionManager: SessionManager
+    private var sessionManager: SessionManager? = null
     private var cancellationSignal: CancellationSignal? = null
 
     private val authecationCallback: BiometricPrompt.AuthenticationCallback
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val goToRegister = findViewById<TextView>(R.id.tv_create)
 
         goToRegister.setOnClickListener {
-            val openRegistration = Intent(this, HomeActivity::class.java)
+            val openRegistration = Intent(this, ClientRegisterActivity::class.java)
             startActivity(openRegistration)
         }
     }
@@ -172,7 +172,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 if (response.code().toString() == "200" || response.code()
                         .toString() == "201" && loginResponse?.client != null
                 ) {
-                    sessionManager.saveAuthToken(loginResponse!!.token)
+                    sessionManager?.saveAuthToken(loginResponse!!.token)
                     goToHome()
 
                 } else {

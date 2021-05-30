@@ -53,7 +53,7 @@ class SearchFragment : Fragment() {
         }
 
         rvCategory = recycleViewPublcation
-        adapterCategory = CategoryAdapter(activity)
+        //adapterCategory = CategoryAdapter(list)
         gridLayoutManager = GridLayoutManager(activity, 2)
         rvCategory.adapter = adapterCategory
         rvCategory.setLayoutManager(gridLayoutManager)

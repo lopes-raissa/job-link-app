@@ -62,7 +62,6 @@
                 android:layout_width="100dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="290dp"
-                android:drawableRight="@drawable/ic_baseline_check_24"
                 android:text="Concluído."
                 android:textStyle="bold" />
 
@@ -78,7 +77,6 @@
                 android:layout_width="120dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="280dp"
-                android:drawableRight="@drawable/ic_baseline_sync_24"
                 android:text="Em processo."
                 android:textStyle="bold" />
 
@@ -94,7 +92,6 @@
                 android:layout_width="120dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="280dp"
-                android:drawableRight="@drawable/ic_baseline_sync_24"
                 android:text="Em processo."
                 android:textStyle="bold" />
 

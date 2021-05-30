@@ -28,7 +28,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="85dp"
         android:layout_marginLeft="70dp"
-        android:background="@drawable/botao_formulario"
+        android:background="@drawable/back_button"
         android:hint="Localização"
         android:paddingLeft="10dp"
         android:drawableRight="@drawable/ic_baseline_location_on_24"
@@ -57,8 +57,7 @@
             android:layout_height="30dp"
             android:layout_marginLeft="7dp"
             android:layout_marginTop="40dp"
-            android:entries="@array/categorias"
-            android:drawableRight="@drawable/ic_baseline_notes_24"/>
+            android:entries="@array/categorias"/>
 
 
     </LinearLayout>

@@ -9,13 +9,13 @@ class ClientRegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register_job_link)
+        setContentView(R.layout.activity_register_client)
 
         //parte que abre o layout de criar conta
-        val buttonVoltar = findViewById<TextView>(R.id.button_back_register)
+       // val buttonVoltar = findViewById<TextView>(R.id.button_back_register)
 
-        buttonVoltar.setOnClickListener {
-            onBackPressed()
-        }
+       // buttonVoltar.setOnClickListener {
+          //  onBackPressed()
+        //}
     }
 }

@@ -30,7 +30,7 @@ class CategoryAdapter(var listCategoryModel: ArrayList<CategoryModel>) :
 
     class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(categoryModel: CategoryModel) {
-            itemView.name_service.text = CategoryModel.nameCategory
+            //itemView.name_service.text = CategoryModel.nameCategory
         }
     }
 }
