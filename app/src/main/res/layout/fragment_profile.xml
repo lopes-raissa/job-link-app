@@ -6,14 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ProfileFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile"
-        android:textSize="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <RelativeLayout
+        android:id="@+id/rlComtainer"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/bt_selected_photo"
+            android:layout_width="42dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/iv_photo"
+            android:layout_marginStart="-22dp"
+            android:layout_toEndOf="@+id/iv_photo"
+            android:background="@drawable/bg_button_img_rounded"
+            android:drawableStart="@drawable/ic_add_a_photo"
+            android:drawableTint="@android:color/white"
+            android:paddingLeft="8dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/logo"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_width="2dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/rubik_bold"
+            android:text="Allan Jackson"
+            android:textSize="20sp"
+            android:layout_below="@+id/iv_photo"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

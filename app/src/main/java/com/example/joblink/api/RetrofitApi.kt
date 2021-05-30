@@ -21,28 +21,28 @@ class RetrofitApi {
         }
     }
 
-    private lateinit var apiService: UserSessionCall
+//    private lateinit var apiService: UserSessionCall
+//
+//    fun getApiService(context: Context): UserSessionCall {
+//
+//        if (!::apiService.isInitialized) {
+//            var retrofitClient = Retrofit.Builder()
+//                .baseUrl(BASE_URL)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .client(client(context))
+//                .build()
+//
+//            apiService = retrofitClient.create(UserSessionCall::class.java)
+//        }
 
-    fun getApiService(context: Context): UserSessionCall {
+//        return apiService
+//    }
 
-        if (!::apiService.isInitialized) {
-            var retrofitClient = Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(client(context))
-                .build()
-
-            apiService = retrofitClient.create(UserSessionCall::class.java)
-        }
-
-        return apiService
-    }
-
-    private fun client(context: Context): OkHttpClient {
-        return OkHttpClient.Builder()
-            .connectTimeout(10, TimeUnit.SECONDS)
-            .readTimeout(10, TimeUnit.SECONDS)
-            .addInterceptor(AuthInterceptor(context))
-            .build()
-    }
+//    private fun client(context: Context): OkHttpClient {
+//        return OkHttpClient.Builder()
+//            .connectTimeout(10, TimeUnit.SECONDS)
+//            .readTimeout(10, TimeUnit.SECONDS)
+//            .addInterceptor(AuthInterceptor(context))
+//            .build()
+//    }
 }

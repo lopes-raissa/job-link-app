@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#c42d00</color>
     <color name="colorAccent">#ffff8800</color>
 
+    <color name="colorSegundary">#F55D7F</color>
+
     <color name="backgroundOffice">#DEE0E7</color>
     <color name="colorBiometria">#EDF1FE</color>
     <color name="colorTitles">#323C49</color>

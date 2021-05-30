@@ -2,7 +2,6 @@ package com.example.joblink.ui
 
 import android.app.KeyguardManager
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.hardware.biometrics.BiometricPrompt
@@ -35,8 +34,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var passwordField: EditText
     lateinit var buttonSignIn: Button
 
-    private lateinit var sessionManager: SessionManager
+    private var sessionManager: SessionManager? = null
     private var cancellationSignal: CancellationSignal? = null
+
     private val authecationCallback: BiometricPrompt.AuthenticationCallback
         get() =
             @RequiresApi(Build.VERSION_CODES.P)
@@ -53,11 +53,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
 
-    private fun goToHome() {
-        val homeActivity = Intent(this, HomeActivity::class.java)
-        startActivity(homeActivity)
-    }
-
     @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,37 +62,46 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         passwordField = findViewById(R.id.et_password_login)
         buttonSignIn = findViewById(R.id.button_sign_in)
 
-        //parte que abre o layout de criar conta
-        val GoToRegister = findViewById<TextView>(R.id.tv_create)
-
-        GoToRegister.setOnClickListener {
-            val openRegistration = Intent(this, RegisterJobLinkActivity::class.java)
-            startActivity(openRegistration)
-        }
+        goToRegister()
 
         checkBiometricSupport()
 
-        button_biometria.setOnClickListener {
-
-            val biometricPrompt = BiometricPrompt.Builder(this)
-                .setTitle("Logar com Biometria")
-                .setDescription("Este aplicativo usa proteção de impressão digital para manter seus dados seguros")
-                .setNegativeButton(
-                    "Cancelar",
-                    this.mainExecutor,
-                    DialogInterface.OnClickListener { dialog, which ->
-                        notifyUser("Autenticação Cancelada")
-                    }).build()
-
-            biometricPrompt.authenticate(
-                getCancellationsSignal(),
-                mainExecutor,
-                authecationCallback
-            )
-        }
+//        button_biometria.setOnClickListener {
+//
+//            val biometricPrompt = BiometricPrompt.Builder(this)
+//                .setTitle("Logar com Biometria")
+//                .setDescription("Este aplicativo usa proteção de impressão digital para manter seus dados seguros")
+//                .setNegativeButton(
+//                    "Cancelar",
+//                    this.mainExecutor,
+//                    DialogInterface.OnClickListener { dialog, which ->
+//                        notifyUser("Autenticação Cancelada")
+//                    }).build()
+//
+//            biometricPrompt.authenticate(
+//                getCancellationsSignal(),
+//                mainExecutor,
+//                authecationCallback
+//            )
+//        }
 
         //Botão Login chamado
         buttonSignIn.setOnClickListener(this)
+    }
+
+    private fun goToRegister() {
+        //parte que abre o layout de criar conta
+        val goToRegister = findViewById<TextView>(R.id.tv_create)
+
+        goToRegister.setOnClickListener {
+            val openRegistration = Intent(this, ClientRegisterActivity::class.java)
+            startActivity(openRegistration)
+        }
+    }
+
+    private fun goToHome() {
+        val homeActivity = Intent(this, HomeActivity::class.java)
+        startActivity(homeActivity)
     }
 
     private fun notifyUser(message: String) {
@@ -143,7 +147,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     fun loggedIn() {
-
         val user = UserLoginModel(
             email = emailField.text.toString(),
             password = passwordField.text.toString()
@@ -169,8 +172,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 if (response.code().toString() == "200" || response.code()
                         .toString() == "201" && loginResponse?.client != null
                 ) {
-                    sessionManager.saveAuthToken(loginResponse!!.token)
-                    Log.e("ERRO_CONEXÃO", loginResponse.token.toString());
+                    sessionManager?.saveAuthToken(loginResponse!!.token)
                     goToHome()
 
                 } else {

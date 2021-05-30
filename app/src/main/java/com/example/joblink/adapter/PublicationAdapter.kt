@@ -1,5 +1,6 @@
 package com.example.joblink.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,11 +11,12 @@ import com.example.joblink.model.PublicationModel
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.layout_list_publications.view.*
 
-class PublicationAdapter(val context: FragmentActivity?): RecyclerView.Adapter<PublicationAdapter.PublicationViewHolder>() {
+class PublicationAdapter(val context: FragmentActivity?) :
+    RecyclerView.Adapter<PublicationAdapter.PublicationViewHolder>() {
 
     var ListPublication = emptyList<PublicationModel>()
 
-    fun updateListPublication(list: List<PublicationModel>){
+    fun updateListPublication(list: List<PublicationModel>) {
         ListPublication = list
         notifyDataSetChanged()
     }
@@ -28,7 +30,7 @@ class PublicationAdapter(val context: FragmentActivity?): RecyclerView.Adapter<P
     }
 
     override fun getItemCount(): Int {
-        return  ListPublication.size
+        return ListPublication.size
     }
 
     override fun onBindViewHolder(holder: PublicationViewHolder, position: Int) {
@@ -42,7 +44,7 @@ class PublicationAdapter(val context: FragmentActivity?): RecyclerView.Adapter<P
             itemView.textDatePublication.text = publicationModel.datePublication
             itemView.textProfission.text = publicationModel.profission
             itemView.textDescription.text = publicationModel.description
-           // itemView.textFreelancerNote.rating = publication.freelancerNote
+            // itemView.textFreelancerNote.rating = publication.freelancerNote
         }
     }
 }
