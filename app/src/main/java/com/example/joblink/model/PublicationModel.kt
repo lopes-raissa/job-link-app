@@ -1,6 +1,7 @@
 package com.example.joblink.model
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
 data class PublicationModel(
     @SerializedName("id")
@@ -20,12 +21,12 @@ data class PublicationModel(
     @SerializedName("attendance")
     var attendance: Int = 0,
     @SerializedName("is_announcement")
-    var is_announcement: Boolean = true,
+    var is_announcement: Int = 1,
     @SerializedName("freelancerNote")
     var freelancerNote: Float = 1.0f,
     @SerializedName("User")
     var user : User,
-    @SerializedName("User")
+    @SerializedName("Categories")
     var categories: List<CategoryModel>
 
 )

@@ -14,21 +14,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.FreelancerRegisterActivity"></activity>
-        <activity android:name=".ui.ProfileActivity" />
         <activity android:name=".ui.ChatActivity" />
         <activity
             android:name=".ui.SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        </activity>
+
+        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.ClientRegisterActivity" />
+        <activity android:name=".ui.Forms" />
+        <activity android:name=".ui.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity" />
-        <activity android:name=".ui.ClientRegisterActivity" />
-        <activity android:name=".ui.Forms" />
-        <activity android:name=".ui.HomeActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

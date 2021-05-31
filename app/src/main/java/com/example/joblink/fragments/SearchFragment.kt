@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.joblink.R
 import com.example.joblink.adapter.CategoryAdapter
 import com.example.joblink.adapter.PublicationAdapter
+import com.example.joblink.model.CategoryModel
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
 
@@ -44,16 +45,10 @@ class SearchFragment : Fragment() {
 
     private fun startRecycleView() {
 
-       var list = ArrayList<String>()
-
-
-
-        for (i in 0 until list.size) {
-            list[i] = Scanner(System.`in`).nextLine().toString()
-        }
+       var list = ArrayList<CategoryModel>()
 
         rvCategory = recycleViewPublcation
-        //adapterCategory = CategoryAdapter(list)
+        adapterCategory = CategoryAdapter(list)
         gridLayoutManager = GridLayoutManager(activity, 2)
         rvCategory.adapter = adapterCategory
         rvCategory.setLayoutManager(gridLayoutManager)

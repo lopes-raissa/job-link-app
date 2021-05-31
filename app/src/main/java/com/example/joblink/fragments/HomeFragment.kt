@@ -62,6 +62,7 @@ class HomeFragment : Fragment() {
 
         call.enqueue(object : Callback<List<PublicationModel>> {
             override fun onFailure(call: Call<List<PublicationModel>>, t: Throwable) {
+                Log.e("Teste", t.message.toString())
                 Toast.makeText(activity, "Ops! falha na conexão.", Toast.LENGTH_SHORT).show()
             }
 

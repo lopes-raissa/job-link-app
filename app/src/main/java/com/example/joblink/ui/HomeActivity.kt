@@ -23,6 +23,8 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+
+
         homeFragment = HomeFragment()
         searchFragment = SearchFragment()
         publishFragment = PublishFragment()
