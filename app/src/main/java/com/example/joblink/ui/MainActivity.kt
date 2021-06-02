@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var passwordField: EditText
     lateinit var buttonSignIn: Button
 
+
     private var sessionManager: SessionManager? = null
     private var cancellationSignal: CancellationSignal? = null
 
