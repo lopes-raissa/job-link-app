@@ -30,3 +30,15 @@ data class PublicationModel(
     var categories: List<CategoryModel>
 
 )
+//
+//"name": "Matheus Henrique S. S",
+//"email": "matheus@henrique.com.br",
+//"gender": "Masculino",
+//"password": "$2a$10$uXAzOb8LKcfXMZSQpD2r0e/IIclU.cO81DmPDcl0luALGNlz.5zuG",
+//"birth_date": "04/04/1974",
+//"cpf": "47230647814",
+//"banned": false,
+//"suspended": false,
+//"is_freelancer": false,
+//"agreed_policy": true,
+//"address"

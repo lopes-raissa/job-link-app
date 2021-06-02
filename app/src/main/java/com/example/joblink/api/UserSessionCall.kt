@@ -9,5 +9,5 @@ import retrofit2.http.*
 interface UserSessionCall {
 
     @POST("sessions")
-    fun login(@Body modelUser: UserLoginModel): Call<LoginResponseModel>
+    fun login(@Body User: UserLoginModel): Call<LoginResponseModel>
 }

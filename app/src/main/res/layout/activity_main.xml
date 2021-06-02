@@ -34,17 +34,12 @@
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="0dp"
-        android:layout_height="53dp"
+        style="@style/typingField"
         android:layout_marginStart="24dp"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/back_button"
-        android:fontFamily="@font/rubik"
         android:hint="@string/email"
-        android:paddingLeft="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView2" />
@@ -55,11 +50,9 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/back_button"
         android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 

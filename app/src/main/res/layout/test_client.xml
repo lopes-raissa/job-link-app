@@ -105,7 +105,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_text_nascimento"
                     style="@style/edit_text_scrollView"
-                    android:hint="@string/data_nasc"
+                    android:hint="@string/birth_date_register"
                     android:inputType="date" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -118,7 +118,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_text_cpf"
                     style="@style/edit_text_scrollView"
-                    android:hint="@string/cpf"
+                    android:hint="@string/cpf_register"
                     android:inputType="numberSigned" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -131,7 +131,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_text_email_register"
                     style="@style/edit_text_scrollView"
-                    android:hint="@string/email_register"
+                    android:hint="@string/email_login"
                     android:inputType="textEmailAddress" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -142,10 +142,10 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_password"
+                    android:id="@+id/et_name"
                     style="@style/edit_text_scrollView"
                     android:layout_marginBottom="20dp"
-                    android:hint="@string/senha_register"
+                    android:hint="@string/password_login"
                     android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>

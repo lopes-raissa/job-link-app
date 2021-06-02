@@ -2,6 +2,7 @@ package com.example.joblink.ui
 
 import android.app.KeyguardManager
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.hardware.biometrics.BiometricPrompt
@@ -67,24 +68,24 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         checkBiometricSupport()
 
-//        button_biometria.setOnClickListener {
-//
-//            val biometricPrompt = BiometricPrompt.Builder(this)
-//                .setTitle("Logar com Biometria")
-//                .setDescription("Este aplicativo usa proteção de impressão digital para manter seus dados seguros")
-//                .setNegativeButton(
-//                    "Cancelar",
-//                    this.mainExecutor,
-//                    DialogInterface.OnClickListener { dialog, which ->
-//                        notifyUser("Autenticação Cancelada")
-//                    }).build()
-//
-//            biometricPrompt.authenticate(
-//                getCancellationsSignal(),
-//                mainExecutor,
-//                authecationCallback
-//            )
-//        }
+        button_biometria.setOnClickListener {
+
+            val biometricPrompt = BiometricPrompt.Builder(this)
+                .setTitle("Logar com Biometria")
+                .setDescription("Este aplicativo usa proteção de impressão digital para manter seus dados seguros")
+                .setNegativeButton(
+                    "Cancelar",
+                    this.mainExecutor,
+                    DialogInterface.OnClickListener { dialog, which ->
+                        notifyUser("Autenticação Cancelada")
+                    }).build()
+
+            biometricPrompt.authenticate(
+                getCancellationsSignal(),
+                mainExecutor,
+                authecationCallback
+            )
+        }
 
         //Botão Login chamado
         buttonSignIn.setOnClickListener(this)
@@ -160,7 +161,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         call.enqueue(object : Callback<LoginResponseModel> {
             override fun onFailure(call: Call<LoginResponseModel>, t: Throwable) {
-                Toast.makeText(this@MainActivity, "A conexão falhou :(", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, "Falha na conexão", Toast.LENGTH_LONG).show()
                 Log.e("ERRO_CONEXÃO", t.message.toString())
             }
 
@@ -174,6 +175,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         .toString() == "201" && loginResponse?.client != null
                 ) {
                     sessionManager?.saveAuthToken(loginResponse!!.token)
+
+                    Log.i("TEKFDFDFF", user.toString())
+
+                    Log.i("TESTEE", sessionManager?.fethAuthToken().toString())
                     goToHome()
 
                 } else {

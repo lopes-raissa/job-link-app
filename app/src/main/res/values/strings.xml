@@ -8,19 +8,21 @@
     <string name="biometria">Biometria</string>
     <string name="esqueceu">Esqueceu sua senha ?</string>
     <string name="criarconta">Criar Conta</string>
-    <string name="register">Cadastro</string>string>
+    <string name="register">Cadastro</string>
 
-    <string name="name">Nome Completo</string>string>
-    <string name="sexo">Sexo</string>string>
-    <string name="data_nasc">Data Nasc.</string>string>
-    <string name="cpf">CPF</string>string>
-    <string name="email_register">E-mail</string>string>
-    <string name="senha_register">Senha</string>string>
-    <string name="termos">Concordo com os termos.</string>string>
-    <string name="crate">Create Account</string>string>
-    <string name="forms1">Selecione o tipo de serviço</string>string>
-    <string name="forms2">Selecione a urgência do serviço</string>string>
-    <string name="forms3">Selecione o atendimento</string>string>
+    <!-- Strings de Cadastro -->
+    <string name="name">Nome Completo</string>
+    <string name="sexo">Sexo</string>
+    <string name="birth_date_register">Data de Nascimento</string>
+    <string name="cpf_register">Digite seu CPF</string>
+    <string name="address_register">Insira seu endereço</string>
+    <string name="email_login">E-mail</string>
+    <string name="password_login">Senha</string>
+    <string name="termos">Concordo com os termos.</string>
+    <string name="crate">Create Account</string>
+    <string name="forms1">Selecione o tipo de serviço</string>
+    <string name="forms2">Selecione a urgência do serviço</string>
+    <string name="forms3">Selecione o atendimento</string>
     <string name="message">Digite sua mensagem</string>
     <string name="enviar">Enviar</string>
     <string name="conversa">Digite uma mensagem...</string>

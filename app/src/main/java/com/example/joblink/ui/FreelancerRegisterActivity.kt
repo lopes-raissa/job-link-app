@@ -30,12 +30,12 @@ class FreelancerRegisterActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_freelancer_register)
 
-        btnSelected = findViewById(R.id.selected_photo)
-        ivPhoto = findViewById(R.id.iv_photo)
+        btnPhoto = findViewById(R.id.selected_photo)
+        imagePhoto = findViewById(R.id.iv_photo)
         toolbarFreelancer = findViewById(R.id.toolbar)
         collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar)
 
-        btnSelected.setOnClickListener(this)
+        btnPhoto.setOnClickListener(this)
 
         insertToolbar()
 
@@ -58,7 +58,7 @@ class FreelancerRegisterActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
 
-        if (v!! == btnSelected) {
+        if (v!! == btnPhoto) {
             selectPhotoGalery()
         }
     }
@@ -85,13 +85,13 @@ class FreelancerRegisterActivity : AppCompatActivity(), View.OnClickListener {
                 uriImage = data.data
                 // btnSelected.getBackground().setAlpha(0)
                 // btnSelected.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0)
-                ivPhoto.setImageURI(uriImage)
+                imagePhoto.setImageURI(uriImage)
             }
 
         }
     }
 
-    private fun selectPhotoGalery() {
+     fun selectPhotoGalery() {
         var intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
         intent.setType("image/*")
 
