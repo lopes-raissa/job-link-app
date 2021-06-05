@@ -9,12 +9,12 @@
     <RelativeLayout
         android:id="@+id/rlComtainer"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@android:color/holo_orange_dark">
+        android:background="@drawable/background_splash">
 
         <Button
             android:id="@+id/bt_selected_photo"
@@ -35,7 +35,7 @@
             android:layout_centerVertical="true"
             android:layout_marginTop="24dp"
             android:src="@drawable/logo"
-            app:civ_border_color="@color/colorAccent"
+            app:civ_border_color="@android:color/white"
             app:civ_border_width="2dp"
             android:layout_centerHorizontal="true"/>
 
@@ -47,6 +47,7 @@
             android:fontFamily="@font/rubik_bold"
             android:text="Allan Jackson"
             android:textSize="20sp"
+            android:textColor="@android:color/white"
             android:layout_below="@+id/iv_photo"
             android:layout_centerHorizontal="true"/>
 

@@ -6,19 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.joblink.R
-import com.example.joblink.adapter.CategoryAdapter
-import com.example.joblink.adapter.PublicationAdapter
-import com.example.joblink.model.CategoryModel
+//import com.example.joblink.adapter.ProfissionAdapter
+import com.example.joblink.model.ProfissionModel
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
 
 class SearchFragment : Fragment() {
 
     private lateinit var rvCategory: RecyclerView
-    private lateinit var adapterCategory: CategoryAdapter
+   // private lateinit var adapterProfission: ProfissionAdapter
     private lateinit var gridLayoutManager: GridLayoutManager
     private lateinit var profileFragment: ProfileFragment
 
@@ -39,18 +37,18 @@ class SearchFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        startRecycleView()
+        //startRecycleView()
 
     }
 
     private fun startRecycleView() {
 
-       var list = ArrayList<CategoryModel>()
+       var list = ArrayList<ProfissionModel>()
 
         rvCategory = recycleViewPublcation
-        adapterCategory = CategoryAdapter(list)
+       // adapterProfission = ProfissionAdapter(list)
         gridLayoutManager = GridLayoutManager(activity, 2)
-        rvCategory.adapter = adapterCategory
+       // rvCategory.adapter = adapterProfission
         rvCategory.setLayoutManager(gridLayoutManager)
     }
 

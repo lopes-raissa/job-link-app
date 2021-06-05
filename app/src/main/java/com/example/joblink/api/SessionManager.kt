@@ -4,10 +4,10 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.example.joblink.R
 
-class SessionManager(context: Context) {
+class SessionManager(context: Context?) {
 
     private var prefs: SharedPreferences =
-        context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
+        context!!.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
 
     companion object {
         const val USER_TOKEN = "user_token"
@@ -21,5 +21,11 @@ class SessionManager(context: Context) {
 
     fun fethAuthToken(): String? {
         return prefs.getString(USER_TOKEN, null)
+    }
+
+    fun logout() {
+        val editor: SharedPreferences.Editor = prefs.edit()
+        editor.clear()
+        editor.apply()
     }
 }

@@ -94,13 +94,13 @@
             android:textAlignment="viewStart"
             android:textAllCaps="false"
             android:textColor="@color/colorTitles"
-            android:textSize="12sp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView_perfil" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/ivPublication"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="11dp"
@@ -137,16 +137,16 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="14dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="8dp"
             android:background="@color/colorPrimary"
             android:fontFamily="@font/rubik"
-            android:text="Contatar"
+            android:text="@string/contact"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/ivPublication" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

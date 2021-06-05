@@ -12,7 +12,7 @@
         android:icon="@drawable/search_icon"
         app:showAsAction="always"/>
 
-    <item android:id="@+id/menu_publish"
+    <item android:id="@+id/menu_message"
         android:title="Mensagens"
         android:icon="@drawable/message_icon"
         app:showAsAction="always"/>

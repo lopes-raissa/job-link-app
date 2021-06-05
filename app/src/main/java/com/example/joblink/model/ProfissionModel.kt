@@ -2,9 +2,9 @@ package com.example.joblink.model
 
 import com.google.gson.annotations.SerializedName
 
-data class CategoryModel(
+data class ProfissionModel(
     @SerializedName("id")
-    var id: Int,
+    var id: Long,
     @SerializedName("name")
-    var nameCategory: String
+    var nameProfession: String
 )

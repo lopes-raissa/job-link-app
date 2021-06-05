@@ -6,19 +6,23 @@ import com.google.gson.annotations.SerializedName
 data class LoginResponseModel(
     @SerializedName("client")
     var client: User,
+    var freelancer: User,
     @SerializedName("token")
     var token: String
 )
 
 data class User(
     @SerializedName("id")
-    var id: Int,
+    var id: Long,
     @SerializedName("name")
     var name: String,
     @SerializedName("email")
     var email: String,
     @SerializedName("birth_date")
-    var birth_date: String,
+    var birthDate: String,
     @SerializedName("cpf")
-    var cpf: String
+    var cpf: String,
+    @SerializedName("is_freelancer")
+    var isFreelancer: Long
 )
+

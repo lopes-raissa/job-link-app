@@ -10,9 +10,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import com.example.joblink.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
-lateinit var btnPhoto: Button
+lateinit var btnPhoto: FloatingActionButton
 lateinit var imagePhoto: ImageView
 private var uriImage: Uri? = null
 

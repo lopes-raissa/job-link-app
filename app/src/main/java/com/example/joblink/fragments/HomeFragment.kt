@@ -12,8 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.joblink.R
 import com.example.joblink.adapter.PublicationAdapter
-import com.example.joblink.api.FeedCall
+import com.example.joblink.api.Calls.FeedCall
 import com.example.joblink.api.RetrofitApi
+import com.example.joblink.api.SessionManager
 import com.example.joblink.model.PublicationModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -22,7 +23,8 @@ import retrofit2.Response
 class HomeFragment : Fragment() {
 
     lateinit var adapterPublication: PublicationAdapter
-    lateinit var rvViewPublcation: RecyclerView
+    lateinit var rvPublcation: RecyclerView
+    lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,31 +40,29 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        startRecycleView()
+        loadFeed()
 
-        Feedlist()
     }
 
-    private fun startRecycleView() {
+    private fun loadFeed() {
 
-        rvViewPublcation = recycleViewPublcation
+        rvPublcation = recycleViewPublcation
         adapterPublication = PublicationAdapter(activity)
-        rvViewPublcation.layoutManager =
+        rvPublcation.layoutManager =
             LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        rvViewPublcation.adapter = adapterPublication
-    }
+        rvPublcation.adapter = adapterPublication
+        sessionManager = SessionManager(activity)
 
-    private fun Feedlist() {
+        var feeds: List<PublicationModel> = emptyList()
 
-        var publications: List<PublicationModel> = listOf<PublicationModel>()
-
-        val retrofit = RetrofitApi.getRetrofit()
-        val feedCall = retrofit.create(FeedCall::class.java)
-        val call = feedCall.getPublication()
+        val retrofit = activity?.let { RetrofitApi.getRetrofit(FeedCall::class.java, it) }
+        //val feedsCall = retrofit.create(FeedCall::class.java)
+        //val call = feedsCall.getPublication()
+        val call = retrofit!!.getPublication()
 
         call.enqueue(object : Callback<List<PublicationModel>> {
             override fun onFailure(call: Call<List<PublicationModel>>, t: Throwable) {
-                Log.e("Teste", t.message.toString())
+                Log.e("XXXXXXXXXX HOME FRAG ERROR Teste", t.localizedMessage)
                 Toast.makeText(activity, "Ops! falha na conexão.", Toast.LENGTH_SHORT).show()
             }
 
@@ -70,10 +70,19 @@ class HomeFragment : Fragment() {
                 call: Call<List<PublicationModel>>,
                 response: Response<List<PublicationModel>>
             ) {
-                Log.i("Teste", response.body().toString())
-                publications = response.body()!! //Double BANG!!
-                adapterPublication.updateListPublication(publications)
+                if (sessionManager.fethAuthToken() != null) {
+
+                    Log.i("Teste", response.code().toString())
+                    Log.i(
+                        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX HomeFragment Teste",
+                        response.body().toString()
+                    )
+                    feeds = response.body()!!
+                    adapterPublication.updateListPublication(feeds)
+                }
             }
         })
     }
+
+
 }

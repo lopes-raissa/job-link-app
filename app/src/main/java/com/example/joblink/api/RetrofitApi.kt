@@ -3,6 +3,7 @@ package com.example.joblink.api
 import android.content.Context
 import retrofit2.Retrofit
 import com.example.joblink.api.UrlApi.Companion.BASE_URL
+import com.example.joblink.fragments.HomeFragment
 import okhttp3.OkHttpClient
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
@@ -10,16 +11,26 @@ import java.util.concurrent.TimeUnit
 class RetrofitApi {
 
     companion object {
-        fun getRetrofit(): Retrofit {
+        fun<T> getRetrofit(clazz: Class<T>, context: Context): T {
 
             var retrofit = Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(httpClient(context))
                 .build()
-            return retrofit
 
+            return retrofit.create(clazz)
+        }
+
+        fun httpClient(context: Context?): OkHttpClient {
+            return OkHttpClient.Builder()
+                .readTimeout(40, TimeUnit.SECONDS)
+                .connectTimeout(40, TimeUnit.SECONDS)
+                .addInterceptor(AuthInterceptor(context))
+                .build()
         }
     }
+
 
 //    private lateinit var apiService: UserSessionCall
 //

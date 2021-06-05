@@ -21,7 +21,7 @@ import androidx.core.app.ActivityCompat
 import com.example.joblink.R
 import com.example.joblink.api.RetrofitApi
 import com.example.joblink.api.SessionManager
-import com.example.joblink.api.UserSessionCall
+import com.example.joblink.api.Calls.UserSessionCall
 import com.example.joblink.model.UserLoginModel
 import com.example.joblink.model.LoginResponseModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -34,9 +34,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var emailField: EditText
     lateinit var passwordField: EditText
     lateinit var buttonSignIn: Button
+    lateinit var sessionManager: SessionManager
 
-
-    private var sessionManager: SessionManager? = null
     private var cancellationSignal: CancellationSignal? = null
 
     private val authecationCallback: BiometricPrompt.AuthenticationCallback
@@ -63,6 +62,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         emailField = findViewById(R.id.email)
         passwordField = findViewById(R.id.et_password_login)
         buttonSignIn = findViewById(R.id.button_sign_in)
+        sessionManager = SessionManager(this)
 
         goToRegister()
 
@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val goToRegister = findViewById<TextView>(R.id.tv_create)
 
         goToRegister.setOnClickListener {
-            val openRegistration = Intent(this, ClientRegisterActivity::class.java)
+            val openRegistration = Intent(this, LocationOfServicesActivity::class.java)
             startActivity(openRegistration)
         }
     }
@@ -154,10 +154,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             password = passwordField.text.toString()
         )
 
-        val retrofit = RetrofitApi.getRetrofit()
-        val loginCall = retrofit.create(UserSessionCall::class.java)
-
-        val call = loginCall.login(user)
+        val retrofit = RetrofitApi.getRetrofit(UserSessionCall::class.java, this)
+        //val loginCall = retrofit.create(UserSessionCall::class.java)
+        //val call = loginCall.login(user)
+        val call = retrofit.login(user)
 
         call.enqueue(object : Callback<LoginResponseModel> {
             override fun onFailure(call: Call<LoginResponseModel>, t: Throwable) {
@@ -172,13 +172,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val loginResponse = response.body()
 
                 if (response.code().toString() == "200" || response.code()
-                        .toString() == "201" && loginResponse?.client != null
+                        .toString() == "201" && loginResponse?.client != null || loginResponse?.freelancer != null
                 ) {
-                    sessionManager?.saveAuthToken(loginResponse!!.token)
+                    sessionManager.saveAuthToken(loginResponse!!.token)
 
-                    Log.i("TEKFDFDFF", user.toString())
-
-                    Log.i("TESTEE", sessionManager?.fethAuthToken().toString())
+                    Log.i("XXXXXXXXXXXXXX Login TESTEE", loginResponse.token.toString())
                     goToHome()
 
                 } else {

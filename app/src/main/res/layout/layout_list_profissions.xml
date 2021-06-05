@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_profission"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_profission"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/image_profission"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/eletricista"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/title_profission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Eletricista"
+                android:textColor="@android:color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:layout_width="180dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        wei-->
+    <!--        android:elevation="15dp"-->
+    <!--        app:cardCornerRadius="15dp"-->
+    <!--        android:layout_marginEnd="18dp"-->
+    <!--        android:layout_marginStart="12dp"-->
+    <!--        android:foregroundGravity="center"-->
+    <!--        android:layout_gravity="clip_horizontal">-->
+
+    <!--        <RelativeLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content">-->
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/image_category"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="90dp"-->
+    <!--                android:layout_marginLeft="8dp"-->
+    <!--                android:layout_marginTop="5dp"-->
+    <!--                android:background="@drawable/eletricista"-->
+    <!--                android:scaleType="fitXY" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/title_category"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:text="Eletricista"-->
+    <!--                android:textColor="@android:color/white"-->
+    <!--                android:textSize="18dp"-->
+    <!--                android:textStyle="bold" />-->
+
+    <!--        </RelativeLayout>-->
+
+    <!--    </androidx.cardview.widget.CardView>-->
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:layout_width="180dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:elevation="15dp"-->
+    <!--        app:cardCornerRadius="15dp"-->
+    <!--        android:padding="10dp"-->
+    <!--        android:layout_gravity="clip_horizontal">-->
+
+    <!--        <RelativeLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content">-->
+
+    <!--            <ImageView-->
+    <!--                android:id="@+id/image_category_2"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="90dp"-->
+    <!--                android:layout_marginLeft="8dp"-->
+    <!--                android:layout_marginTop="5dp"-->
+    <!--                android:background="@drawable/mecanico"-->
+    <!--                android:scaleType="fitXY" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/title_category_2"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:text="Eletricista"-->
+    <!--                android:textColor="@android:color/white"-->
+    <!--                android:textSize="18dp"-->
+    <!--                android:textStyle="bold" />-->
+
+    <!--        </RelativeLayout>-->
+
+    <!--    </androidx.cardview.widget.CardView>-->
+
+
+</FrameLayout>

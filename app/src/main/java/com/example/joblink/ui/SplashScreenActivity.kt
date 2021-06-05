@@ -12,16 +12,16 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
         changeToLogin()
-        }
-    fun changeToLogin(){
-        val intent = Intent(this, MainActivity::class.java)
+    }
 
+    fun changeToLogin() {
+        val intent = Intent(this, MainActivity::class.java)
         Handler().postDelayed({
             intent.change()
         }, 1000)
     }
 
-    fun Intent.change(){
+    fun Intent.change() {
         startActivity(this)
         finish()
     }
