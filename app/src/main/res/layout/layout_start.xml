@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:background="@drawable/retangulo_redondo2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Olá! Bem-vind@ ao JobLink!"
+            android:textSize="40dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"/>
+
+
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:background="@drawable/button_orange_rounded"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="100dp"
+            />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
