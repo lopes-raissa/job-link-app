@@ -9,7 +9,7 @@ class RegisterClientModel(
     @SerializedName("birth_date")
     var birthDate: String,
     var email: String,
-    var cpf: Int,
+    var cpf: String,
     var password: String,
     var address: String
 )

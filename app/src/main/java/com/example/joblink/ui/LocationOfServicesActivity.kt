@@ -33,16 +33,18 @@ class LocationOfServicesActivity : AppCompatActivity() {
         super.onResume()
         var errorCode = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this)
 
+        Log.d("ERRORR", errorCode.toString())
+
         when (errorCode) {
-            1 -> {
+            0 -> {
                 ConnectionResult.SERVICE_MISSING
                 Toast.makeText(this, "show Dialog 1", Toast.LENGTH_SHORT).show()
             }
-            2 -> {
-                ConnectionResult.SERVICE_VERSION_UPDATE_REQUIRED
-                Toast.makeText(this, "show Dialog 2", Toast.LENGTH_SHORT).show()
+            1 -> {
+                ConnectionResult.SUCCESS
+                Log.d("TESTE SUCESSSSOOOO", "Atualizadooo")
             }
-            3 -> {
+            2 -> {
                 ConnectionResult.SERVICE_DISABLED
                 Toast.makeText(this, "show Dialog 3", Toast.LENGTH_SHORT).show()
 
@@ -53,8 +55,9 @@ class LocationOfServicesActivity : AppCompatActivity() {
             }
 
             else -> {
-                ConnectionResult.SUCCESS
-                Log.d("TESTE SUCESSSSOOOO", "Atualizadooo")
+
+                ConnectionResult.SERVICE_VERSION_UPDATE_REQUIRED
+                Toast.makeText(this, "show Dialog 2", Toast.LENGTH_SHORT).show()
             }
         }
 

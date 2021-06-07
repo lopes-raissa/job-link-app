@@ -37,9 +37,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.0.0'
-
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'androidx.palette:palette-ktx:1.0.0'
-
 
     //*** Dependencias para acessar a API HTTP
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -57,7 +56,8 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
 
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //Biblioteca para verificar Token
+    implementation 'com.auth0.android:jwtdecode:2.0.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

@@ -10,6 +10,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.auth0.android.jwt.JWT
 import com.example.joblink.R
 import com.example.joblink.api.SessionManager
 import com.example.joblink.fragments.HomeFragment
@@ -57,10 +58,15 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     private fun verifyAuthentication() {
 
-        if (sessionManager.fethAuthToken() == null) {
+        val token = sessionManager.fethAuthToken()
+        val jwt = JWT(token!!)
+
+        //OBS VER FUNÇÂO Novamente por causa do logout
+        if (token == null || jwt.isExpired(0)) {
             val intent = Intent(this, SplashScreenActivity::class.java)
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
+            Toast.makeText(this,"Sua sessão expirou", Toast.LENGTH_LONG).show()
         }
     }
 

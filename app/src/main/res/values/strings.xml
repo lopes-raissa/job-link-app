@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JobLink</string>
+    <string name="app_name">JOBLINK</string>
 
     <string name="login">Faça Login</string>
     <string name="email">Digite seu email</string>
@@ -26,8 +26,7 @@
     <string name="message">Digite sua mensagem</string>
     <string name="enviar">Enviar</string>
     <string name="conversa">Digite uma mensagem...</string>
-    <string name="contact">Contatar</string>
-
+    <string name="contact">Entrar em Contato</string>
 
     <!--  Provisório-->
     <string-array name="categorias">

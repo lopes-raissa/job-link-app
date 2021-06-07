@@ -19,13 +19,15 @@
         style="@style/caption"
         android:layout_marginTop="15dp"/>
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_profile"
         android:layout_width="64dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
+        android:layout_height="64dp"
         android:layout_marginTop="15dp"
-        app:srcCompat="@drawable/add_photo" />
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/add_photo"
+        app:civ_border_color="@android:color/white"
+        app:civ_border_width="2dp"/>
 
     <Button
         android:layout_width="wrap_content"

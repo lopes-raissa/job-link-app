@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val goToRegister = findViewById<TextView>(R.id.tv_create)
 
         goToRegister.setOnClickListener {
-            val openRegistration = Intent(this, LocationOfServicesActivity::class.java)
+            val openRegistration = Intent(this, ClientRegisterActivity::class.java)
             startActivity(openRegistration)
         }
     }

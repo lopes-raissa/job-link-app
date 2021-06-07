@@ -117,7 +117,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/et_password"
                 style="@style/typingField"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
@@ -131,7 +131,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
             <EditText
-                android:id="@+id/editTextTextPostalAddress"
+                android:id="@+id/et_postal_address"
                 style="@style/typingField"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
@@ -201,7 +201,7 @@
                 android:layout_marginTop="16dp"
                 android:text="Digite seu Endereço"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+                app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -212,7 +212,7 @@
                 android:layout_marginTop="16dp"
                 android:text="Digite Sua Data de Nasc."
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/et_postal_address" />
 
             <TextView
                 android:id="@+id/textView10"
@@ -226,13 +226,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/et_birth_date" />
 
             <EditText
-                android:id="@+id/editTextNumber2"
+                android:id="@+id/et_cpf"
                 style="@style/typingField"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="16dp"
                 android:hint="@string/cpf_register"
-                android:inputType="number"
+                android:inputType="numberSigned"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView10" />
