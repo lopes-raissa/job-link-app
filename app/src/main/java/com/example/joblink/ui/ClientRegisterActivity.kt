@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
 import com.example.joblink.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -23,19 +22,19 @@ class ClientRegisterActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_client)
 
-        btnPhoto = findViewById(R.id.btn_photo)
+       // btnPhoto = findViewById(R.id.btn_photo_register)
         imagePhoto = findViewById(R.id.iv_photo_register)
 
-        btnPhoto.setOnClickListener(this)
+       // btnPhoto.setOnClickListener(this)
 
     }
 
 
     override fun onClick(v: View?) {
 
-        if (v!! == btnPhoto) {
-            selectPhotoGalery()
-        }
+//        if (v!! == btnPhoto) {
+//            selectPhotoGalery()
+//        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

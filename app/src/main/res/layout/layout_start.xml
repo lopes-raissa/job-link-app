@@ -40,7 +40,7 @@
         android:layout_marginTop="30dp">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_ncd"
+            android:id="@+id/cv_register_freelancer"
             android:layout_width="10dp"
             android:layout_weight="1"
             android:layout_height="180dp"
@@ -60,7 +60,7 @@
                     android:layout_width="200dp"
                     android:layout_height="100dp"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/freelancer2" />
+                    android:src="@drawable/freelancer" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_imc"
+            android:id="@+id/cv_register_client"
             android:layout_width="10dp"
             android:layout_weight="1"
             android:layout_height="180dp"
