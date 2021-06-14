@@ -70,12 +70,9 @@
 
     <Button
         android:id="@+id/button_biometria"
-        android:layout_width="125dp"
-        android:layout_height="55dp"
+        style="@style/buttonStyle"
         android:background="@drawable/button_biometry_rounded"
         android:drawableLeft="@drawable/ic_biometric_24"
-        android:fontFamily="@font/rubik_medium"
-        android:paddingLeft="8dp"
         android:text="@string/biometria"
         android:textColor="#8B949B"
         android:textSize="13sp"
@@ -86,11 +83,9 @@
 
     <Button
         android:id="@+id/button_sign_in"
-        android:layout_width="125dp"
-        android:layout_height="55dp"
+        style="@style/buttonStyle"
         android:layout_marginTop="24dp"
         android:background="@drawable/button_orange_rounded"
-        android:fontFamily="@font/rubik_medium"
         android:text="@string/sign_in"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/esqueceu_senha"

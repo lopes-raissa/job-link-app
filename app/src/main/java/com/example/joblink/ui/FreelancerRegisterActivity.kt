@@ -30,12 +30,12 @@ class FreelancerRegisterActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_freelancer_register)
 
-        btnPhoto = findViewById(R.id.selected_photo)
+//        btnPhotoFreelancer = findViewById(R.id.selected_photo)
         imagePhoto = findViewById(R.id.iv_photo)
         toolbarFreelancer = findViewById(R.id.toolbar)
         collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar)
 
-        btnPhoto.setOnClickListener(this)
+        btnPhotoFreelancer.setOnClickListener(this)
 
         insertToolbar()
 
@@ -58,7 +58,7 @@ class FreelancerRegisterActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
 
-        if (v!! == btnPhoto) {
+        if (v!! == btnPhotoFreelancer) {
             selectPhotoGalery()
         }
     }

@@ -10,6 +10,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_home.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.auth0.android.jwt.JWT
 import com.example.joblink.R
 import com.example.joblink.adapter.PublicationAdapter
 import com.example.joblink.api.Calls.FeedCall
@@ -77,8 +78,17 @@ class HomeFragment : Fragment() {
                         "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX HomeFragment Teste",
                         response.body().toString()
                     )
-                    feeds = response.body()!!
-                    adapterPublication.updateListPublication(feeds)
+
+                    if (response.code() == 200) {
+                        feeds = response.body()!!
+                        adapterPublication.updateListPublication(feeds)
+                    } else {
+                        val jwt = JWT(sessionManager.fethAuthToken().toString())
+
+                        Log.i("TESTE HOMEFRAG", jwt.isExpired(0).toString())
+
+                    }
+
                 }
             }
         })

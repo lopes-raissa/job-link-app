@@ -104,6 +104,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun goToHome() {
         val homeActivity = Intent(this, HomeActivity::class.java)
         startActivity(homeActivity)
+        finish()
     }
 
     private fun notifyUser(message: String) {

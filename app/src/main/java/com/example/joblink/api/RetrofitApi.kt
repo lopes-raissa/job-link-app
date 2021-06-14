@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit
 class RetrofitApi {
 
     companion object {
-        fun<T> getRetrofit(clazz: Class<T>, context: Context): T {
+        fun <T> getRetrofit(clazz: Class<T>, context: Context): T {
 
             var retrofit = Retrofit.Builder()
                 .baseUrl(BASE_URL)
