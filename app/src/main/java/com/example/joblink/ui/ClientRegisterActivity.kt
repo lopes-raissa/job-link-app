@@ -3,7 +3,6 @@ package com.example.joblink.ui
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
@@ -12,11 +11,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.joblink.R
 import com.example.joblink.api.Calls.ClientRegisterCall
 import com.example.joblink.api.RetrofitApi
 import com.example.joblink.api.SessionManager
 import com.example.joblink.model.RegisterClientModel
+import com.github.rtoshiro.util.format.SimpleMaskFormatter
+import com.github.rtoshiro.util.format.text.MaskTextWatcher
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,7 +49,6 @@ class ClientRegisterActivity : AppCompatActivity(), View.OnClickListener {
 
         btnPhotoFreelancer.setOnClickListener(this)
         loadData()
-
     }
 
     private fun loadData() {
@@ -61,12 +63,18 @@ class ClientRegisterActivity : AppCompatActivity(), View.OnClickListener {
         cpfRegister = findViewById(R.id.et_cpf)
         btnRegisterClient = findViewById(R.id.btn_register_client)
 
-        btnPhotoFreelancer.setOnClickListener(this)
         sessionManager = SessionManager(this)
-
+        btnPhotoFreelancer.setOnClickListener(this)
         btnRegisterClient.setOnClickListener(this)
-    }
 
+        val maskDate: SimpleMaskFormatter = SimpleMaskFormatter("NN/NN/NNNN")
+        val mtwDate: MaskTextWatcher = MaskTextWatcher(birthDateRegister, maskDate)
+        birthDateRegister.addTextChangedListener(mtwDate)
+
+        val maskCpf: SimpleMaskFormatter = SimpleMaskFormatter("NNNNNNNNNNN")
+        val mtwCpf: MaskTextWatcher = MaskTextWatcher(cpfRegister, maskCpf)
+        cpfRegister.addTextChangedListener(mtwCpf)
+    }
 
     override fun onClick(view: View) {
 
@@ -75,9 +83,9 @@ class ClientRegisterActivity : AppCompatActivity(), View.OnClickListener {
                 selectPhotoGalery()
             }
             R.id.btn_register_client -> {
+                validarCampos()
                 registered()
             }
-
         }
     }
 
@@ -101,6 +109,14 @@ class ClientRegisterActivity : AppCompatActivity(), View.OnClickListener {
         startActivityForResult(Intent.createChooser(intent, "Escolha uma imagem"), 1)
     }
 
+    private fun notifyUser(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun validarCampos() {
+
+    }
+
     private fun goToHome() {
         val homeActivity = Intent(this, HomeActivity::class.java)
         startActivity(homeActivity)
@@ -115,7 +131,8 @@ class ClientRegisterActivity : AppCompatActivity(), View.OnClickListener {
             password = passwordRegister.text.toString(),
             address = addressRegister.text.toString(),
             birthDate = birthDateRegister.text.toString(),
-            gender = "M"
+            gender = "M",
+            image = imagePhoto.toString()
         )
 
         val retrofit = RetrofitApi.getRetrofit(ClientRegisterCall::class.java, this)
@@ -128,26 +145,31 @@ class ClientRegisterActivity : AppCompatActivity(), View.OnClickListener {
                 response: Response<RegisterClientModel>
             ) {
 
-                val resposeBody = response.body()
+                //val resposeBody = response.body()
 
-                Toast.makeText(
-                    this@ClientRegisterActivity,
-                    "Conta Criada com sucesso!",
-                    Toast.LENGTH_SHORT
-                ).show()
+                if (response.isSuccessful()) {
 
-                goToHome()
+                    notifyUser("Conta Criada com sucesso!")
+                } else {
+                    //Capturar o Erro e mostra para o usuario futuro
+                    notifyUser("Erro ao cadastrar")
+                    val jObjError = JSONObject(response.errorBody()!!.string())
+
+                    Log.i(
+                        "ClientRegisterActivity",
+                        jObjError.getJSONObject("error").getString("message"))
+
+                }
+
+
+                //goToHome()
             }
 
             override fun onFailure(call: Call<RegisterClientModel>, t: Throwable) {
-                Toast.makeText(
-                    this@ClientRegisterActivity,
-                    "Ops! Não foi possivel fazer a conexão.",
-                    Toast.LENGTH_SHORT
-                ).show()
+
+                notifyUser("Ops! Não foi possivel fazer a conexão.")
                 Log.e("ERRO_CONEXAO", t.message.toString())
             }
-
         })
     }
 }

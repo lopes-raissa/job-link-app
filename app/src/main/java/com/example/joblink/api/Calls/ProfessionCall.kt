@@ -7,6 +7,9 @@ import retrofit2.http.Path
 
 interface ProfessionCall {
 
+    @GET("professions")
+    fun getProfession(): Call<List<ProfissionModel>>
+
     @GET("professions/{id}")
-    fun getProfission(@Path("id") id: Long): Call<List<ProfissionModel>>
+    fun getProfessionId(@Path("id") id: Long): Call<List<ProfissionModel>>
 }

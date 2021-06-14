@@ -65,7 +65,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         sessionManager = SessionManager(this)
 
         goToRegister()
-
         checkBiometricSupport()
 
         button_biometria.setOnClickListener {
@@ -143,7 +142,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
 
         if (emailField.text.toString() == "" || passwordField.text.toString() == "") {
-            Toast.makeText(this@MainActivity, "É preciso efetuar o Login", Toast.LENGTH_LONG).show()
+            notifyUser("É preciso efetuar o Login")
         } else {
             loggedIn()
         }
@@ -162,7 +161,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         call.enqueue(object : Callback<LoginResponseModel> {
             override fun onFailure(call: Call<LoginResponseModel>, t: Throwable) {
-                Toast.makeText(this@MainActivity, "Falha na conexão", Toast.LENGTH_LONG).show()
+                notifyUser("Falha na conexão")
                 Log.e("ERRO_CONEXÃO", t.message.toString())
             }
 
@@ -181,8 +180,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     goToHome()
 
                 } else {
-                    Toast.makeText(this@MainActivity, "email ou senha incorreto", Toast.LENGTH_LONG)
-                        .show()
+                    notifyUser("email ou senha incorreto")
                 }
             }
         })

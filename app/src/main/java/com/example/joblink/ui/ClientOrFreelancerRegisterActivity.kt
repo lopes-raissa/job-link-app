@@ -35,7 +35,7 @@ class ClientOrFreelancerRegisterActivity : AppCompatActivity(), View.OnClickList
                 startActivity(intent)
             }
             R.id.cv_register_freelancer -> {
-                val intent = Intent(this, FreelancerRegisterActivity::class.java)
+                val intent = Intent(this, RegisterFreelancerActivity::class.java)
                 startActivity(intent)
             }
         }

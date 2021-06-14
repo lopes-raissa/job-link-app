@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName
 class RegisterClientModel(
     var name: String,
     var gender: String,
+    var image: String,
     @SerializedName("birth_date")
     var birthDate: String,
     var email: String,

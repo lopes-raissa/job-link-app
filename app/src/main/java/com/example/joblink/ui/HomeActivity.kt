@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
@@ -19,12 +18,10 @@ import com.example.joblink.fragments.PublishFragment
 import com.example.joblink.fragments.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.toolbar.*
-
 
 class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
-    private lateinit var bottomNavigationView: BottomNavigationView
 
+    private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var homeFragment: HomeFragment
     private lateinit var searchFragment: SearchFragment
     private lateinit var publishFragment: PublishFragment
@@ -57,34 +54,29 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     private fun verifyAuthentication() {
-
         val token = sessionManager.fethAuthToken()
 
         if (token == null) {
-            tokenIsExpired()
+            logout()
+        } else {
+            val jwt = JWT(token)
+
+            if (jwt.isExpired(0)) {
+                notifyUser("Sua sessão expirou")
+                logout()
+            }
         }
-        //val jwt = JWT(token!!)
-
-        //OBS VER FUNÇÂO Novamente por causa do logout
-//        if (token == null || jwt.isExpired(0)) {
-//            val intent = Intent(this, SplashScreenActivity::class.java)
-//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
-//            startActivity(intent)
-//            Toast.makeText(this, "Sua sessão expirou", Toast.LENGTH_LONG).show()
-//            finish()
-//        }
-
     }
 
-    private fun tokenIsExpired() {
-
+    private fun logout() {
         val intent = Intent(this, SplashScreenActivity::class.java)
-//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
-
         sessionManager.logout()
-        Toast.makeText(this, "Sua sessão expirou", Toast.LENGTH_LONG).show()
         finish()
+    }
+
+    private fun notifyUser(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun insertToolbar() {
@@ -101,9 +93,9 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
         when (item.itemId) {
             R.id.logout -> {
-                sessionManager.logout()
+                logout()
                 verifyAuthentication()
-                Toast.makeText(this, "Você fez Logout", Toast.LENGTH_SHORT).show()
+                notifyUser("Você fez Logout")
             }
             R.id.publish -> {
             }
@@ -125,9 +117,7 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 setFragment(homeFragment)
             }
             R.id.menu_search -> {
-                //setFragment(searchFragment)
-                val intent = Intent(this, FreelancerRegisterActivity::class.java)
-                startActivity(intent)
+                setFragment(searchFragment)
             }
             R.id.menu_message -> {
                 val intent = Intent(this, MessageActivity::class.java)

@@ -14,10 +14,10 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MessageActivity"></activity>
+        <activity android:name=".ui.RegisterFreelancerActivity"></activity>
+        <activity android:name=".ui.MessageActivity" />
         <activity android:name=".ui.ClientOrFreelancerRegisterActivity" />
         <activity android:name=".ui.LocationOfServicesActivity" />
-        <activity android:name=".ui.FreelancerRegisterActivity" />
         <activity android:name=".ui.ChatActivity" />
         <activity
             android:name=".ui.SplashScreenActivity"
