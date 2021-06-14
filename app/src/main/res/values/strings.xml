@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">JobLink</string>
 
+    <!-- Strings do Login -->
     <string name="login">Faça Login</string>
     <string name="email">Digite seu email</string>
     <string name="password">Digite sua senha</string>
@@ -65,5 +66,26 @@
         <item>Não</item>
         <item></item>
     </string-array>
+
+
+    <!-- Strings de Start !-->
+    <string name="selecione">Ao selecionar o perfil, você será encaminhado (a) para a página escolhida.</string>
+    <string name="titulo_start">Olá! Seja bem-vind@ ao JobLink!</string>
+    <string name="selecione_start">Selecione o seu perfil.</string>
+
+    <!-- Strings de Publicação !-->
+    <string name="criar">Criar uma nova publicação.</string>
+    <string name="description">Descrição:</string>
+    <string name="image">Imagem (opcional)</string>
+    <string name="urgencia">Urgência:</string>
+    <string name="urgencia1">Baixa</string>
+    <string name="urgencia2">Média</string>
+    <string name="urgencia3">Alta</string>
+    <string name="publicar">Publicar</string>
+
+    <!-- Strings de avaliação de serviço!-->
+    <string name="mascara">O prestador de serviços utilizou máscara durante o atendimento?</string>
+    <string name="distancia">O prestador de serviços manteve o distanciamento social?</string>
+    <string name="higiene">O prestador de serviços manteve a higiene das mãos?</string>
 
 </resources>

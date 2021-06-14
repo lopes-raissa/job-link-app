@@ -11,29 +11,29 @@
   <include layout="@layout/toolbar"/>
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="95dp"
         android:layout_marginTop="100dp"
         android:background="@drawable/retangulo_arredondado"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp">
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="O prestador de serviços utilizou máscara durante o atendimento?"
+            android:layout_height="33dp"
+            android:text="@string/mascara"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
-            android:textColor="@android:color/black"
-            />
+            android:textColor="@android:color/black" />
 
         <Spinner
-            android:layout_width="145dp"
+            android:layout_width="100dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="10dp"
+            android:entries="@array/avaliacao" />
 
 
     </LinearLayout>
@@ -47,18 +47,18 @@
         android:layout_marginRight="15dp">
 
         <TextView
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:text="@string/forms2"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:text="@string/distancia"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:textColor="@android:color/black"/>
 
         <Spinner
-            android:layout_width="150dp"
+            android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_marginTop="40dp"
-            android:entries="@array/urgencia" />
+            android:entries="@array/avaliacao" />
 
 
     </LinearLayout>
@@ -72,9 +72,9 @@
         android:layout_marginRight="15dp">
 
         <TextView
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:text="@string/forms3"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:text="@string/higiene"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:textColor="@android:color/black"/>
@@ -83,7 +83,7 @@
             android:layout_width="150dp"
             android:layout_height="30dp"
             android:layout_marginTop="40dp"
-            android:entries="@array/tipo_servico" />
+            android:entries="@array/avaliacao" />
 
 
     </LinearLayout>
