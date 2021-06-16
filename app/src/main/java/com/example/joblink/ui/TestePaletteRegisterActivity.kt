@@ -28,28 +28,23 @@ class FreelancerRegisterActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_freelancer_register)
+        setContentView(R.layout.pallete_activity_freelancer_register)
 
-        btnPhoto = findViewById(R.id.selected_photo)
+//        btnPhotoFreelancer = findViewById(R.id.selected_photo)
         imagePhoto = findViewById(R.id.iv_photo)
         toolbarFreelancer = findViewById(R.id.toolbar)
         collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar)
 
-        btnPhoto.setOnClickListener(this)
+        btnPhotoFreelancer.setOnClickListener(this)
 
         insertToolbar()
-
          loadPalette()
-
-
     }
-
 
     private fun loadPalette() {
 
         val bitmap: Bitmap = BitmapFactory.decodeResource(resources, R.drawable.add_photo)
         Palette.from(bitmap).generate { palette ->
-
             if (palette != null) {
                 collapsingToolbarLayout.setContentScrimColor(palette.getMutedColor(R.attr.colorPrimary))
             }
@@ -58,7 +53,7 @@ class FreelancerRegisterActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
 
-        if (v!! == btnPhoto) {
+        if (v!! == btnPhotoFreelancer) {
             selectPhotoGalery()
         }
     }
@@ -79,15 +74,12 @@ class FreelancerRegisterActivity : AppCompatActivity(), View.OnClickListener {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (resultCode == Activity.RESULT_OK) {
-
             if (requestCode == 0 && data != null) {
-
                 uriImage = data.data
                 // btnSelected.getBackground().setAlpha(0)
                 // btnSelected.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0)
                 imagePhoto.setImageURI(uriImage)
             }
-
         }
     }
 
