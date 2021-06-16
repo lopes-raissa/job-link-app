@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="410dp"
-        android:layout_height="200dp">
+        android:layout_height="310dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView_perfil"
@@ -89,32 +89,108 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="10dp"
             android:fontFamily="@font/roboto"
-            android:text="Matheus Henrique realizou um serviço de fiação elétrica para você. O serviço foi concluído."
+            android:text="Prestador de serviço: Matheus Henrique Santos da Silva"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/colorTitles"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_perfil" />
+
+        <TextView
+            android:id="@+id/textDescription2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/roboto"
+            android:text="Data do serviço: 13/05/2021"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/colorTitles"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_perfil" />
+
+        <TextView
+            android:id="@+id/textDescription3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/roboto"
+            android:text="Serviço realizado: instalação de aparelhos elétricos."
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/colorTitles"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_perfil" />
+
+        <TextView
+            android:id="@+id/textDescription4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="105dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/roboto"
+            android:text="Valor total do serviço: R$ 180,00"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@color/colorTitles"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_perfil"
+            />
+
+        <TextView
+            android:id="@+id/textDescription5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/roboto"
+            android:textStyle="bold"
+            android:text="Serviço online ou presencial: Presencial"
             android:textAlignment="viewStart"
             android:textAllCaps="false"
             android:textColor="@color/colorTitles"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView_perfil" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView_perfil"
+            />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="150dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/button_blue"
-            android:fontFamily="@font/rubik"
-            android:text="Pagar"
-            android:textColor="@android:color/white"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <TextView
+            android:id="@+id/textDescription6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="155dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/roboto"
+            android:text="Número total de visitas para a realização: 1"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="@color/colorTitles"
+            android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.897"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_perfil"/>
+
 
         <Button
             android:id="@+id/button2"
@@ -122,16 +198,16 @@
             android:layout_height="30dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/button_orange"
             android:fontFamily="@font/rubik"
-            android:text="Detalhes"
+            android:text="Voltar"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.094"
             app:layout_constraintStart_toStartOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
