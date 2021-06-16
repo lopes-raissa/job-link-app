@@ -4,7 +4,7 @@
     <!-- Strings do Login -->
     <string name="login">Faça Login</string>
     <string name="email">Digite seu email</string>
-    <string name="password">Digite sua senha</string>
+    <string name="password">Digite uma senha</string>
     <string name="sign_in">Entrar</string>
     <string name="biometria">Biometria</string>
     <string name="esqueceu">Esqueceu sua senha ?</string>
@@ -26,10 +26,12 @@
     <string name="forms3">Selecione o atendimento</string>
     <string name="message">Digite sua mensagem</string>
     <string name="enviar">Enviar</string>
-    <string name="conversa">Digite uma mensagem...</string>
     <string name="contact">Entrar em Contato</string>
-    <string name="type_a_message">Digite uma mensagem...</string>
+    <string name="type_a_message">Digite uma mensagem…</string>
     <string name="Create_an_account">Criar Conta</string>
+    <string name="seek_a_profession">Busque por uma profissão</string>
+    <string name="categories">Categorias</string>
+    <string name="descriptions_profession_image">Imagens da Profissão</string>
 
     <!--  Provisório-->
     <string-array name="categorias">
@@ -65,13 +67,12 @@
     <string-array name="avaliacao">
         <item>Sim</item>
         <item>Não</item>
-        <item></item>
     </string-array>
 
 
     <!-- Strings de Start !-->
     <string name="selecione">Ao selecionar o perfil, você será encaminhado (a) para a página escolhida.</string>
-    <string name="titulo_start">Olá! Seja bem-vind@ ao JobLink!</string>
+    <string name="titulo_start">Olá! Seja bem-vindo(a) ao JobLink!</string>
     <string name="selecione_start">Selecione o seu perfil.</string>
 
     <!-- Strings de Publicação !-->

@@ -111,8 +111,8 @@
             android:textAlignment="viewStart"
             android:textAllCaps="false"
             android:textColor="@color/colorTitles"
-            android:textStyle="bold"
             android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView_perfil" />
@@ -146,13 +146,12 @@
             android:text="Valor total do serviço: R$ 180,00"
             android:textAlignment="viewStart"
             android:textAllCaps="false"
-            android:textStyle="bold"
             android:textColor="@color/colorTitles"
             android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView_perfil"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/cardView_perfil" />
 
         <TextView
             android:id="@+id/textDescription5"
@@ -162,16 +161,15 @@
             android:layout_marginTop="130dp"
             android:layout_marginEnd="10dp"
             android:fontFamily="@font/roboto"
-            android:textStyle="bold"
             android:text="Serviço online ou presencial: Presencial"
             android:textAlignment="viewStart"
             android:textAllCaps="false"
             android:textColor="@color/colorTitles"
             android:textSize="14sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView_perfil"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/cardView_perfil" />
 
         <TextView
             android:id="@+id/textDescription6"
@@ -189,8 +187,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView_perfil"/>
-
+            app:layout_constraintTop_toBottomOf="@+id/cardView_perfil" />
 
         <Button
             android:id="@+id/button2"
@@ -199,7 +196,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/button_orange"
+            android:background="@drawable/button_orange_rounded"
             android:fontFamily="@font/rubik"
             android:text="Voltar"
             android:textColor="@android:color/white"

@@ -94,7 +94,6 @@
 
             </androidx.cardview.widget.CardView>
 
-
             <EditText
                 android:id="@+id/et_name"
                 style="@style/typingField"
@@ -257,7 +256,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_cpf" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

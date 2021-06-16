@@ -2,14 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/publish"
-        android:title="Publicar"
+    <item
+        android:id="@+id/publish"
         android:icon="@drawable/publish_icon"
-        app:showAsAction="always"/>
+        android:title="Publicar"
+        app:showAsAction="always" />
 
-    <item android:id="@+id/logout"
-        android:title="Sair"
+    <item
+        android:id="@+id/logout"
         android:icon="@drawable/ic_exit"
-        app:showAsAction="always"/>
+        android:title="Sair"
+        app:showAsAction="always" />
 
 </menu>

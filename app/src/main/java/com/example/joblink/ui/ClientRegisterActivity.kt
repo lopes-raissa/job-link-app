@@ -153,12 +153,6 @@ class ClientRegisterActivity : AppCompatActivity(), View.OnClickListener {
                 } else {
                     //Capturar o Erro e mostra para o usuario futuro
                     notifyUser("Erro ao cadastrar")
-                    val jObjError = JSONObject(response.errorBody()!!.string())
-
-                    Log.i(
-                        "ClientRegisterActivity",
-                        jObjError.getJSONObject("error").getString("message"))
-
                 }
 
 

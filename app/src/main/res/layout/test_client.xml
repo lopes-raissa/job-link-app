@@ -92,7 +92,6 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_text_sexo"
                     style="@style/edit_text_scrollView"
-                    android:background="@drawable/botao_register"
                     android:hint="@string/sexo" />
 
             </com.google.android.material.textfield.TextInputLayout>

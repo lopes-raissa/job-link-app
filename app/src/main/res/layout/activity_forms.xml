@@ -7,57 +7,39 @@
     tools:context=".ui.Forms">
 
 
-    <Toolbar
-        android:id="@+id/forms"
-        android:layout_width="match_parent"
-        android:layout_height="67dp"
-        android:background="@android:color/holo_orange_dark"/>
-
-    <TextView
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:text="Formulário"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"/>
-
     <EditText
         android:layout_width="250dp"
         android:layout_height="30dp"
-        android:layout_marginTop="85dp"
         android:layout_marginLeft="70dp"
+        android:layout_marginTop="85dp"
         android:background="@drawable/back_button"
+        android:drawableRight="@drawable/ic_baseline_location_on_24"
         android:hint="Localização"
         android:paddingLeft="10dp"
-        android:drawableRight="@drawable/ic_baseline_location_on_24"
-        android:paddingRight="15dp"/>
+        android:paddingRight="15dp" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_marginTop="150dp"
-        android:background="@drawable/retangulo_arredondado"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="150dp"
         android:layout_marginRight="15dp">
 
         <TextView
             android:layout_width="200dp"
             android:layout_height="30dp"
-            android:text="@string/forms1"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
-            android:textColor="@android:color/black"
-            />
+            android:text="@string/forms1"
+            android:textColor="@android:color/black" />
 
         <Spinner
             android:layout_width="145dp"
             android:layout_height="30dp"
             android:layout_marginLeft="7dp"
             android:layout_marginTop="40dp"
-            android:entries="@array/categorias"/>
+            android:entries="@array/categorias" />
 
 
     </LinearLayout>
@@ -65,18 +47,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_marginTop="260dp"
-        android:background="@drawable/retangulo_arredondado"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="260dp"
         android:layout_marginRight="15dp">
 
         <TextView
             android:layout_width="200dp"
             android:layout_height="30dp"
-            android:text="@string/forms2"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
-            android:textColor="@android:color/black"/>
+            android:text="@string/forms2"
+            android:textColor="@android:color/black" />
 
         <Spinner
             android:layout_width="150dp"
@@ -90,18 +71,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_marginTop="370dp"
-        android:background="@drawable/retangulo_arredondado"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="370dp"
         android:layout_marginRight="15dp">
 
         <TextView
             android:layout_width="200dp"
             android:layout_height="30dp"
-            android:text="@string/forms3"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
-            android:textColor="@android:color/black"/>
+            android:text="@string/forms3"
+            android:textColor="@android:color/black" />
 
         <Spinner
             android:layout_width="150dp"
@@ -115,11 +95,10 @@
     <Button
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="500dp"
         android:layout_marginLeft="190dp"
+        android:layout_marginTop="500dp"
         android:text="SALVAR"
-        android:textStyle="bold"/>
-
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

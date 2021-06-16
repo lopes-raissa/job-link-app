@@ -6,7 +6,7 @@
 
     <color name="colorSegundary">#ee063a</color>
 
-    <color name="backgroundOffice">#DEE0E7</color>
+    <color name="backgroundOffice">#efefef</color>
     <color name="colorBiometria">#EDF1FE</color>
     <color name="colorTitles">#323C49</color>
 </resources>

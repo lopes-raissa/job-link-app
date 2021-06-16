@@ -24,7 +24,7 @@ data class PublicationModel(
     @SerializedName("freelancerNote")
     var freelancerNote: Float = 1.0f,
     @SerializedName("User")
-    var user : User
+    var userModel : UserModel
     //@SerializedName("Categories")
     //var categories: ProfissionModel
 

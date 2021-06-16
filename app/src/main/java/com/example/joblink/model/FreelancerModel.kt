@@ -2,15 +2,7 @@ package com.example.joblink.model
 
 import com.google.gson.annotations.SerializedName
 
-data class LoginResponseModel(
-    @SerializedName("client")
-    var client: UserModel,
-    var freelancer: UserModel,
-    @SerializedName("token")
-    var token: String
-)
-
-data class UserModel(
+data class FreelancerModel(
     @SerializedName("id")
     var id: Long,
     @SerializedName("name")
@@ -21,7 +13,7 @@ data class UserModel(
     var birthDate: String,
     @SerializedName("phone_number")
     var PhoneNumber: String,
-    var image: String,
+    var image: String ? = "",
     var gender: String,
     var address: String,
     @SerializedName("cpf")
@@ -29,3 +21,4 @@ data class UserModel(
     @SerializedName("is_freelancer")
     var isFreelancer: Long
 )
+

@@ -95,7 +95,6 @@
             android:textColor="@color/colorTitles"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView_perfil" />
 
@@ -103,8 +102,7 @@
             android:id="@+id/button"
             android:layout_width="150dp"
             android:layout_height="30dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/button_blue"
             android:fontFamily="@font/rubik"
@@ -112,9 +110,7 @@
             android:textColor="@android:color/white"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.897"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
             android:id="@+id/button2"
@@ -123,7 +119,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="24dp"
-            android:background="@drawable/button_orange"
+            android:background="@drawable/button_orange_rounded"
             android:fontFamily="@font/rubik"
             android:text="Detalhes"
             android:textColor="@android:color/white"

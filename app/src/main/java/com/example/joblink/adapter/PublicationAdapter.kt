@@ -39,7 +39,7 @@ class PublicationAdapter(val context: FragmentActivity?) :
         val publication = ListPublication[position]
         Glide.with(context!!).load(publication.image).into(holder.ivImage)
 
-        holder.tvNameUser.text = publication.user.name
+        holder.tvNameUser.text = publication.userModel.name
 
         holder.tvDatePublication.text = publication.datePublication
         holder.tvProfission.text = publication.profission
